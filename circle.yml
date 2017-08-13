@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  machine:
+  build:
     environment:
       PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
     node:
