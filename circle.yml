@@ -1,26 +1,24 @@
-version: 2
-jobs:
-  build:
-    environment:
-      PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
-    node:
-      version: 8.2.1
+machine:
+  environment:
+    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+  node:
+    version: 8.2.1
 
-  dependencies:
-    override:
-      - yarn
-    cache_directories:
-      - ~/.cache/yarn
-    pre:
-      - yarn global add now
+dependencies:
+  override:
+    - yarn
+  cache_directories:
+    - ~/.cache/yarn
+  pre:
+    - yarn global add now
 
-  test:
-    override:
-      - yarn test
+test:
+  override:
+    - yarn test
 
-  deployment:
-    production:
-      branch: master
-      commands:
-        - cd build && now -t ${NOW_TOKEN}
-        - cd build && now -t ${NOW_TOKEN} alias lunchfinder
+deployment:
+  production:
+    branch: master
+    commands:
+      - cd build && now -t ${NOW_TOKEN}
+      - cd build && now -t ${NOW_TOKEN} alias lunchfinder
