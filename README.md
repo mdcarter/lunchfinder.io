@@ -1,4 +1,4 @@
-![Logo of the project](./images/logo.sample.png)
+![Logo of the project](https://raw.githubusercontent.com/wearehive/project-guidelines/master/images/logo.sample.png)
 
 # Lunchfinder
 > Additional information or tag line
@@ -11,7 +11,7 @@ A quick introduction of the minimal setup you need to get a hello world up &
 running.
 
 ```shell
-yarn dev
+yarn start
 ```
 
 Here you should say what actually happens when you execute the code above.
@@ -56,7 +56,7 @@ In case there's some step you have to take that publishes this project to a
 server, this is the right time to state it.
 
 ```shell
-now
+yarn deploy
 ```
 
 And again you'd need to tell what the previous code actually does.
