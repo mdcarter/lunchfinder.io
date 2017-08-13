@@ -31,4 +31,28 @@ export default class Store extends Reflux.Store {
       this.setState({ locationUnavailable: true });
     }
   }
+
+  onGetCategories() {
+    fetch(
+      `https://api.foursquare.com/v2/venues/categories?client_id=${process.env
+        .REACT_APP_FOURSQUARE_CLIENT}&client_secret=${process.env
+        .REACT_APP_FOURSQUARE_SECRET}&v=20170813`
+    )
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        const categories = data.response.categories
+          .find(category => {
+            return (
+              category.id === process.env.REACT_APP_FOURSQUARE_FOOD_CATEGORY
+            );
+          })
+          .categories.map(category => {
+            return { id: category.id, name: category.shortName };
+          });
+        console.log(categories);
+        this.setState({ categories: categories });
+      });
+  }
 }
