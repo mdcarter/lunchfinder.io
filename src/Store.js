@@ -6,8 +6,10 @@ export default class Store extends Reflux.Store {
     super();
     this.state = {
       locationUnavailable: null,
+      radius: 800,
       latitude: null,
-      longitude: null
+      longitude: null,
+      restaurant: null
     };
 
     this.listenables = [Actions];
@@ -21,6 +23,7 @@ export default class Store extends Reflux.Store {
             latitude: coords.latitude,
             longitude: coords.longitude
           });
+          Actions.getRestaurant();
         },
         error => {
           this.setState({ locationUnavailable: true });
@@ -32,27 +35,26 @@ export default class Store extends Reflux.Store {
     }
   }
 
-  onGetCategories() {
+  onGetRestaurant() {
     fetch(
-      `https://api.foursquare.com/v2/venues/categories?client_id=${process.env
-        .REACT_APP_FOURSQUARE_CLIENT}&client_secret=${process.env
-        .REACT_APP_FOURSQUARE_SECRET}&v=20170813`
+      `https://api.foursquare.com/v2/venues/search?categoryId=4d4b7105d754a06374d81259
+        &ll=${this.state.latitude},${this.state.longitude}
+        &radius=${this.state.radius}
+        &limit=15
+        &intent=browse
+        &client_id=${process.env.REACT_APP_FOURSQUARE_CLIENT}
+        &client_secret=${process.env.REACT_APP_FOURSQUARE_SECRET}
+        &v=20170815`
     )
       .then(response => {
         return response.json();
       })
       .then(data => {
-        const categories = data.response.categories
-          .find(category => {
-            return (
-              category.id === process.env.REACT_APP_FOURSQUARE_FOOD_CATEGORY
-            );
-          })
-          .categories.map(category => {
-            return { id: category.id, name: category.shortName };
-          });
-        console.log(categories);
-        this.setState({ categories: categories });
+        const restaurants = data.response.venues;
+        this.setState({
+          restaurant:
+            restaurants[Math.floor(Math.random() * (restaurants.length + 1))]
+        });
       });
   }
 }

@@ -1,7 +1,3 @@
 import Reflux from 'reflux';
 
-export default Reflux.createActions([
-  'getCurrentLocation',
-  'getCategories',
-  'getRestaurant'
-]);
+export default Reflux.createActions(['getCurrentLocation', 'getRestaurant']);
