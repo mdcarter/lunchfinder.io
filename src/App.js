@@ -20,13 +20,18 @@ class App extends Reflux.Component {
       <div className="App">
         Lunch Finder {this.state.loading && <span> - Chargement...</span>}
         <hr />
+        <button onClick={Actions.getRestaurant}>Un autre</button>
+        <hr />
         {this.state.latitude &&
           <div>
-            Vos coordoonées courante : {this.state.latitude},{this.state.longitude}
+            Vos coordonnées courante :{' '}
+            <strong>
+              {this.state.latitude},{this.state.longitude}
+            </strong>
           </div>}
         {this.state.address &&
           <div>
-            Votre addresse courante : {this.state.address}
+            Votre adresse courante : <strong>{this.state.address}</strong>
           </div>}
         {this.state.restaurant &&
           <div>
