@@ -18,9 +18,11 @@ class App extends Reflux.Component {
   render() {
     return (
       <div className="App">
-        Lunch Finder {this.state.loading && <span> - Chargement...</span>}
+        Lunch Finder
+        {this.state.status.retrievingLocation && <span> - Récupération de votre localisation...</span>}
+        {this.state.status.fetchingData && <span> - Chargement...</span>}
         <hr />
-        <button onClick={Actions.getRestaurant}>Un autre</button>
+        {this.state.restaurant && <button onClick={Actions.getRestaurant}>Un autre</button>}
         <hr />
         {this.state.latitude &&
           <div>

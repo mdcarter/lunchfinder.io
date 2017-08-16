@@ -1,11 +1,15 @@
 import Reflux from 'reflux';
+import Request from './Request';
 import Actions from './Actions';
 
 export default class Store extends Reflux.Store {
   constructor() {
     super();
     this.state = {
-      loading: false,
+      status: {
+        retrievingLocation: false,
+        fetchingData: false
+      },
       locationUnavailable: null,
       radius: 500,
       address: null,
@@ -18,12 +22,16 @@ export default class Store extends Reflux.Store {
   }
 
   onGetCurrentLocation() {
+    this.setState({ status: { retrievingLocation: true } });
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(
         ({ coords }) => {
           this.setState({
             latitude: coords.latitude,
-            longitude: coords.longitude
+            longitude: coords.longitude,
+            status: {
+              retrievingLocation: false
+            }
           });
           Actions.getCurrentAddress();
           Actions.getRestaurant();
@@ -39,20 +47,19 @@ export default class Store extends Reflux.Store {
   }
 
   async onGetCurrentAddress() {
-    this.setState({ loading: true });
-    let address = await (await fetch(
-      `https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.state
-        .latitude},${this.state.longitude}`
-    )).json();
+    this.setState({ status: { fetchingData: true } });
+    let address = await Request.fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.state.latitude},${this.state.longitude}`);
     this.setState({
       address: address.results[0].formatted_address,
-      loading: false
+      status: {
+        fetchingData: false
+      }
     });
   }
 
   async onGetRestaurant() {
-    this.setState({ loading: true });
-    let data = await (await fetch(
+    this.setState({ status: { fetchingData: true } });
+    let data = await Request.fetch(
       `https://api.foursquare.com/v2/venues/search?categoryId=4d4b7105d754a06374d81259
         &ll=${this.state.latitude},${this.state.longitude}
         &radius=${this.state.radius}
@@ -61,15 +68,14 @@ export default class Store extends Reflux.Store {
         &client_id=${process.env.REACT_APP_FOURSQUARE_CLIENT}
         &client_secret=${process.env.REACT_APP_FOURSQUARE_SECRET}
         &v=20170815`
-    )).json();
+    );
 
     if (data && data.response && data.response.venues) {
       this.setState({
-        restaurant:
-          data.response.venues[
-            Math.floor(Math.random() * data.response.venues.length)
-          ],
-        loading: false
+        restaurant: data.response.venues[Math.floor(Math.random() * data.response.venues.length)],
+        status: {
+          fetchingData: false
+        }
       });
     }
     // Once the restaurant is selected, make a call to the venue endpoint to get more details https://developer.foursquare.com/docs/responses/venue
