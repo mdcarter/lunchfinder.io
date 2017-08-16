@@ -48,18 +48,16 @@ export default class Store extends Reflux.Store {
 
   async onGetCurrentAddress() {
     this.setState({ status: { fetchingData: true } });
-    let address = await Request.fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.state.latitude},${this.state.longitude}`);
+    const address = await Request.fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.state.latitude},${this.state.longitude}`);
     this.setState({
       address: address.results[0].formatted_address,
-      status: {
-        fetchingData: false
-      }
+      status: { fetchingData: false }
     });
   }
 
   async onGetRestaurant() {
     this.setState({ status: { fetchingData: true } });
-    let data = await Request.fetch(
+    const data = await Request.fetch(
       `https://api.foursquare.com/v2/venues/search?categoryId=4d4b7105d754a06374d81259
         &ll=${this.state.latitude},${this.state.longitude}
         &radius=${this.state.radius}
@@ -73,9 +71,7 @@ export default class Store extends Reflux.Store {
     if (data && data.response && data.response.venues) {
       this.setState({
         restaurant: data.response.venues[Math.floor(Math.random() * data.response.venues.length)],
-        status: {
-          fetchingData: false
-        }
+        status: { fetchingData: false }
       });
     }
     // Once the restaurant is selected, make a call to the venue endpoint to get more details https://developer.foursquare.com/docs/responses/venue
