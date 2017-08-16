@@ -5,8 +5,10 @@ export default class Store extends Reflux.Store {
   constructor() {
     super();
     this.state = {
+      loading: false,
       locationUnavailable: null,
       radius: 800,
+      address: null,
       latitude: null,
       longitude: null,
       restaurant: null
@@ -23,6 +25,7 @@ export default class Store extends Reflux.Store {
             latitude: coords.latitude,
             longitude: coords.longitude
           });
+          Actions.getCurrentAddress();
           Actions.getRestaurant();
         },
         error => {
@@ -35,7 +38,21 @@ export default class Store extends Reflux.Store {
     }
   }
 
+  async onGetCurrentAddress() {
+    this.setState({ loading: true });
+    let request = await fetch(
+      `https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.state
+        .latitude},${this.state.longitude}`
+    );
+    let address = await request.json();
+    this.setState({
+      address: address.results[0].formatted_address,
+      loading: false
+    });
+  }
+
   onGetRestaurant() {
+    this.setState({ loading: true });
     fetch(
       `https://api.foursquare.com/v2/venues/search?categoryId=4d4b7105d754a06374d81259
         &ll=${this.state.latitude},${this.state.longitude}
@@ -51,10 +68,13 @@ export default class Store extends Reflux.Store {
       })
       .then(data => {
         const restaurants = data.response.venues;
-        this.setState({
-          restaurant:
-            restaurants[Math.floor(Math.random() * (restaurants.length + 1))]
-        });
+        if (restaurants) {
+          this.setState({
+            restaurant:
+              restaurants[Math.floor(Math.random() * (restaurants.length + 1))],
+            loading: false
+          });
+        }
       });
   }
 }

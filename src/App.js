@@ -18,11 +18,21 @@ class App extends Reflux.Component {
   render() {
     return (
       <div className="App">
-        Hello world.<hr />
+        Lunch Finder {this.state.loading && <span> - Chargement...</span>}
+        <hr />
+        {this.state.latitude &&
+          <div>
+            Vos coordoonées courante : {this.state.latitude},{this.state.longitude}
+          </div>}
+        {this.state.address &&
+          <div>
+            Votre addresse courante : {this.state.address}
+          </div>}
         {this.state.restaurant &&
           <div>
+            <hr />
             <h2>
-              {this.state.restaurant.name}
+              Restaurant proposé: {this.state.restaurant.name}
             </h2>
             <p>
               {this.state.restaurant.location.address} ({this.state.restaurant.categories[0].name})
