@@ -18,7 +18,9 @@ class Address extends Component {
   render() {
     const params = {
       value: this.props.address,
-      onChange: this.props.updateAddress
+      onChange: this.props.updateAddress,
+      placeholder: 'Enter an address...',
+      autoFocus: true
     };
 
     return <PlacesAutocomplete inputProps={params} onSelect={this.selectAddress} googleLogo={false} />;
