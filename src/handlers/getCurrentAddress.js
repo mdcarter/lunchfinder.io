@@ -1,4 +1,4 @@
-import Request from './../Request';
+import Request from './../utils/Request';
 
 export default async context => {
   context.setState({ status: { fetchingData: true } });

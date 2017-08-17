@@ -1,7 +1,6 @@
-import Request from './../Request';
+import Request from './../utils/Request';
 
 export default async context => {
-  console.log(process);
   context.setState({ status: { fetchingData: true } });
   const data = await Request.fetch(
     `https://api.foursquare.com/v2/venues/search?categoryId=4d4b7105d754a06374d81259
