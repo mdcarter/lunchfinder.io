@@ -34,7 +34,6 @@ export default class Store extends Reflux.Store {
             }
           });
           Actions.getCurrentAddress();
-          Actions.getRestaurant();
         },
         error => {
           this.setState({ locationUnavailable: true });
@@ -46,6 +45,13 @@ export default class Store extends Reflux.Store {
     }
   }
 
+  onSetCurrentLocation(latitude, longitude) {
+    this.setState({
+      latitude: latitude,
+      longitude: longitude
+    });
+  }
+
   async onGetCurrentAddress() {
     this.setState({ status: { fetchingData: true } });
     const address = await Request.fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.state.latitude},${this.state.longitude}`);
@@ -53,6 +59,10 @@ export default class Store extends Reflux.Store {
       address: address.results[0].formatted_address,
       status: { fetchingData: false }
     });
+  }
+
+  onSetCurrentAddress(address) {
+    this.setState({ address: address });
   }
 
   async onGetRestaurant() {
