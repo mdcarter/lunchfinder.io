@@ -4,7 +4,7 @@ import Reflux from 'reflux';
 import Store from './../Store';
 import Actions from './../Actions';
 
-import './styles/Restaurant.css';
+import './../styles/Restaurant.css';
 
 export default class Restaurant extends Reflux.Component {
   constructor(props) {

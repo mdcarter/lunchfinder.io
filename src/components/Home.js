@@ -5,7 +5,7 @@ import Address from './Address';
 import Store from './../Store';
 import Actions from './../Actions';
 
-import './styles/Home.css';
+import './../styles/Home.css';
 
 export default class Home extends Reflux.Component {
   constructor(props) {
