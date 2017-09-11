@@ -1,3 +1,39 @@
 .page-restaurant {
-  
+  height: 100%;
+  display: flex;
+}
+
+.restaurant {
+  flex: 1;
+  height: 100%;
+
+  pre {
+    display: none;
+  }
+}
+
+.map {
+  flex: 0 0 35%;
+  height: 100%;
+}
+
+.marker {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background: green;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+}
+
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display:none;
+}
+
+.gmnoprint div {
+    background:none !important;
 }
