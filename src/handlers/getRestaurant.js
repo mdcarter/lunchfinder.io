@@ -1,4 +1,5 @@
 import Request from './../utils/Request';
+import Actions from './../Actions';
 import Query from 'query-string';
 
 export default async context => {
@@ -32,6 +33,8 @@ export default async context => {
       restaurant: restaurant.response.venue,
       status: { fetchingData: false }
     });
+
+    Actions.getDirections(context.state.latitude, context.state.longitude, context.state.restaurant.location.lat, context.state.restaurant.location.lng);
   } else {
     context.setState({
       error: 404,

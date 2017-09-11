@@ -24,8 +24,6 @@ export default class Restaurant extends Reflux.Component {
       return null;
     }
 
-    Actions.getDirections(this.state.latitude, this.state.longitude, this.state.restaurant.location.lat, this.state.restaurant.location.lng);
-
     const coords = { lat: this.state.restaurant.location.lat, lng: this.state.restaurant.location.lng };
     const options = {
       disableDefaultUI: true,
@@ -42,6 +40,7 @@ export default class Restaurant extends Reflux.Component {
           <p>
             {this.state.restaurant.location.address} ({this.state.restaurant.categories[0].name})
             {this.state.restaurant.duration && <span> {this.state.restaurant.duration} à pied</span>}
+            {this.state.restaurant.distance && <span> {this.state.restaurant.distance} - Adresse</span>}
           </p>
           <pre>
             <code>{JSON.stringify(this.state.restaurant, undefined, 1)}</code>
