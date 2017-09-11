@@ -1,16 +1,23 @@
-import Request from './../utils/Request';
-import Query from 'query-string';
+/*global google */
 
-export default async (context, origin, destination) => {
-  console.log(context, origin, destination);
-  const params = {
-    categoryId: process.env.REACT_APP_FOURSQUARE_FOOD_CATEGORY,
-    ll: context.state.latitude + ',' + context.state.longitude,
-    radius: context.state.radius,
-    limit: process.env.REACT_APP_DEFAULT_LIMIT,
-    intent: 'browse'
-  };
-
-  const direction = await Request.fetch(`https://maps.googleapis.com/maps/api/directions/json?origin=${origin}&destination=${destination}`);
-  console.log(direction);
+export default (context, originLatitude, originLongitude, destinationLatitude, destinationLongitude) => {
+  const origin = new google.maps.LatLng(originLatitude, originLongitude);
+  const destination = new google.maps.LatLng(destinationLatitude, destinationLongitude);
+  const service = new google.maps.DistanceMatrixService();
+  service.getDistanceMatrix(
+    {
+      origins: [origin],
+      destinations: [destination],
+      travelMode: 'WALKING'
+    },
+    (response, status) => {
+      if (response && response.rows && response.rows[0].elements && response.rows[0].elements[0].duration) {
+        let restaurant = context.state.restaurant;
+        restaurant.duration = response.rows[0].elements[0].duration.text;
+        context.setState({
+          restaurant: restaurant
+        });
+      }
+    }
+  );
 };
