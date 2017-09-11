@@ -15,10 +15,6 @@ export default class Restaurant extends Reflux.Component {
     this.store = Store;
   }
 
-  componentDidMount() {
-    Actions.getCurrentLocation();
-  }
-
   componentWillUnmount() {
     Reflux.Component.prototype.componentWillUnmount.call(this);
   }
@@ -27,6 +23,8 @@ export default class Restaurant extends Reflux.Component {
     if (!this.state.restaurant) {
       return null;
     }
+
+    Actions.getDirections('toto', 'tutu');
 
     const coords = { lat: this.state.restaurant.location.lat, lng: this.state.restaurant.location.lng };
     const options = {

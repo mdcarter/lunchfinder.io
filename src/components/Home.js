@@ -14,6 +14,7 @@ export default class Home extends Reflux.Component {
   }
 
   componentDidMount() {
+    Actions.getDirections('41.0282,28.9784', '41.0082,28.9584');
     Actions.getCurrentLocation();
   }
 

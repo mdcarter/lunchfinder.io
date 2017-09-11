@@ -41,4 +41,8 @@ export default class Store extends Reflux.Store {
   onGetRestaurant() {
     this.handlers.getRestaurant(this);
   }
+
+  onGetDirections(origin, destination) {
+    this.handlers.getDirections(this, origin, destination);
+  }
 }
