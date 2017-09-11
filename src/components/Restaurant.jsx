@@ -28,13 +28,13 @@ export default class Restaurant extends Reflux.Component {
     return (
       <div className="page-restaurant">
         <h2>Restaurant proposé: {this.state.restaurant.name}</h2>
+        <button onClick={Actions.getRestaurant}>Un autre svp</button>
         <p>
           {this.state.restaurant.location.address} ({this.state.restaurant.categories[0].name})
         </p>
         <pre>
           <code>{JSON.stringify(this.state.restaurant, undefined, 1)}</code>
         </pre>
-        <button onClick={Actions.getRestaurant}>Un autre svp</button>
       </div>
     );
   }

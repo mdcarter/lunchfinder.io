@@ -11,7 +11,7 @@ export default class Store extends Reflux.Store {
         fetchingData: false
       },
       locationUnavailable: null,
-      radius: 500,
+      radius: process.env.REACT_APP_DEFAULT_RADIUS,
       address: null,
       latitude: null,
       longitude: null,
