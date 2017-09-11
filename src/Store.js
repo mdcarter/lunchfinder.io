@@ -25,15 +25,19 @@ export default class Store extends Reflux.Store {
   onGetCurrentLocation() {
     this.handlers.getCurrentLocation(this);
   }
+
   onSetCurrentLocation(latitude, longitude) {
     this.handlers.setCurrentLocation(this, latitude, longitude);
   }
+
   onGetCurrentAddress() {
     this.handlers.getCurrentAddress(this);
   }
+
   onSetCurrentAddress(address) {
     this.handlers.setCurrentAddress(this, address);
   }
+
   onGetRestaurant() {
     this.handlers.getRestaurant(this);
   }
