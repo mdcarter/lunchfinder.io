@@ -34,8 +34,18 @@ export default class Restaurant extends Reflux.Component {
 
     return (
       <div className="page-restaurant">
-        <div className="restaurant">
-          <h2>{this.state.restaurant.name}</h2>
+        <section className="restaurant">
+          <header>
+            <h3>Votre restaurant du jour</h3>
+            <h2>{this.state.restaurant.name}</h2>
+            <div className="subtitle">
+              {this.state.restaurant.rating && (
+                <span className="rating">
+                  <strong>{this.state.restaurant.rating}/10</strong> ({this.state.restaurant.ratingSignals} avis)
+                </span>
+              )}
+            </div>
+          </header>
 
           <ul className="informations">
             <li>
@@ -63,13 +73,13 @@ export default class Restaurant extends Reflux.Component {
             <button onClick={Actions.getRestaurant}>Moins loin de moi</button>
             <button onClick={Actions.getRestaurant}>Pas ce restaurant</button>
           </div>
-        </div>
+        </section>
 
-        <div className="map">
+        <section className="map">
           <GoogleMapReact center={coords} defaultZoom={16} options={options}>
             <Marker lat={this.state.restaurant.location.lat} lng={this.state.restaurant.location.lng} />
           </GoogleMapReact>
-        </div>
+        </section>
       </div>
     );
   }
