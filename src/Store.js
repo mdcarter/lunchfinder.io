@@ -10,7 +10,6 @@ export default class Store extends Reflux.Store {
         retrievingLocation: false,
         fetchingData: false
       },
-      locationUnavailable: null,
       radius: process.env.REACT_APP_DEFAULT_RADIUS,
       address: null,
       latitude: null,
@@ -44,5 +43,9 @@ export default class Store extends Reflux.Store {
 
   onGetDirections(originLatitude, originLongitude, destinationLatitude, destinationLongitude) {
     this.handlers.getDirections(this, originLatitude, originLongitude, destinationLatitude, destinationLongitude);
+  }
+
+  onSetSearchRadius(radius) {
+    this.handlers.setSearchRadius(this, radius);
   }
 }

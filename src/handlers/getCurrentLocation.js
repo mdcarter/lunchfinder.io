@@ -14,12 +14,8 @@ export default context => {
         });
         Actions.getCurrentAddress();
       },
-      error => {
-        context.setState({ locationUnavailable: true });
-      },
+      error => {},
       { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
     );
-  } else {
-    context.setState({ locationUnavailable: true });
   }
 };

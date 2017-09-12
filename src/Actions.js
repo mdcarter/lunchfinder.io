@@ -2,10 +2,11 @@ import Reflux from 'reflux';
 
 export default Reflux.createActions([
   'getCurrentLocation',
+  'setCurrentLocation',
   'getCurrentAddress',
   'setCurrentAddress',
-  'setCurrentLocation',
   'getCategories',
   'getRestaurant',
-  'getDirections'
+  'getDirections',
+  'setSearchRadius'
 ]);
