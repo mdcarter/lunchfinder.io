@@ -41,8 +41,12 @@ export default class Store extends Reflux.Store {
     this.handlers.getRestaurant(this);
   }
 
-  onGetDirections(originLatitude, originLongitude, destinationLatitude, destinationLongitude) {
-    this.handlers.getDirections(this, originLatitude, originLongitude, destinationLatitude, destinationLongitude);
+  onGetDirections() {
+    this.handlers.getDirections(this);
+  }
+
+  onSetDirectionsLink() {
+    this.handlers.setDirectionsLink(this);
   }
 
   onReduceSearchRadius() {

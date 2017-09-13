@@ -34,7 +34,7 @@ export default async context => {
       status: { fetchingData: false }
     });
 
-    Actions.getDirections(context.state.latitude, context.state.longitude, context.state.restaurant.location.lat, context.state.restaurant.location.lng);
+    Actions.getDirections();
   } else {
     context.setState({
       error: 404,

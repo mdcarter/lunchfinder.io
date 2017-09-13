@@ -68,7 +68,9 @@ export default class Restaurant extends Reflux.Component {
           </ul>
 
           <div className="actions">
-            <button onClick={Actions.getRestaurant}>Y aller</button>
+            <a target="_blank" href={this.state.restaurant.directions}>
+              Y aller
+            </a>
             <button onClick={Actions.getRestaurant}>Pas ce type de cuisine</button>
             {this.state.radius > process.env.REACT_APP_MINIMUM_RADIUS && <button onClick={Actions.reduceSearchRadius}>Moins loin de moi</button>}
             <button onClick={Actions.getRestaurant}>Pas ce restaurant</button>
@@ -77,7 +79,7 @@ export default class Restaurant extends Reflux.Component {
 
         <section className="map">
           <GoogleMapReact center={coords} defaultZoom={16} options={options}>
-            <Marker lat={this.state.restaurant.location.lat} lng={this.state.restaurant.location.lng} />
+            <Marker lat={this.state.restaurant.location.lat} lng={this.state.restaurant.location.lng} link={this.state.restaurant.directions} />
           </GoogleMapReact>
         </section>
       </div>
