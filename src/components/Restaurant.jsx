@@ -70,7 +70,7 @@ export default class Restaurant extends Reflux.Component {
           <div className="actions">
             <button onClick={Actions.getRestaurant}>Y aller</button>
             <button onClick={Actions.getRestaurant}>Pas ce type de cuisine</button>
-            <button onClick={Actions.getRestaurant}>Moins loin de moi</button>
+            {this.state.radius > process.env.REACT_APP_MINIMUM_RADIUS && <button onClick={Actions.reduceSearchRadius}>Moins loin de moi</button>}
             <button onClick={Actions.getRestaurant}>Pas ce restaurant</button>
           </div>
         </section>

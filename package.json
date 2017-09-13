@@ -1,6 +1,8 @@
 {
   "name": "lunchfinder.io",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "author": "Maxime Dehaye <maxime.dehaye@gmail.com>",
+  "homepage": "https://lunchfinder.io",
   "private": true,
   "dependencies": {
     "google-map-react": "^0.24.0",
