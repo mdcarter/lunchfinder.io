@@ -1,6 +1,8 @@
 ![Logo of the project](https://raw.githubusercontent.com/wearehive/project-guidelines/master/images/logo.sample.png)
 
 # Lunchfinder
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/mdcarter/lunchfinder.io.svg?token=6db9b78ee97b5c5c27d1fcee9ebaedd99eecf6f6cea0610d63c5aea5266d949d&ts=1505377727846)](https://greenkeeper.io/)
 > Additional information or tag line
 
 Lunchfinder is a simple application that helps you choose quickly a restaurant to eat around your location.
