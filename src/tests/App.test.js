@@ -7,14 +7,11 @@ import sinon from 'sinon';
 import App from './../App';
 
 jest.mock('./../components/Home', () => {
-  return props => {
-    return <mocked />;
-  };
+  return 'div';
 });
+
 jest.mock('./../components/Restaurant', () => {
-  return props => {
-    return <mocked />;
-  };
+  return 'div';
 });
 
 describe('<App />', () => {
