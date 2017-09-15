@@ -17,8 +17,14 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-places-autocomplete": "^5.4.2",
-    "react-scripts": "1.0.11",
-    "reflux": "^6.4.1"
+    "react-scripts": "1.0.11"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "enzyme": "^2.9.1",
+    "react-test-renderer": "^15.6.1",
+    "reflux": "^6.4.1",
+    "sinon": "^3.2.1"
   },
   "scripts": {
     "precommit": "lint-staged",
@@ -28,12 +34,27 @@
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
-    "test": "react-scripts test --env=jsdom"
+    "test": "react-scripts test --env=jsdom",
+    "coverage": "react-scripts test --env=jsdom --coverage"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
       "prettier --single-quote --write --print-width 160",
       "git add"
+    ]
+  },
+  "jest": {
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ],
+    "collectCoverageFrom": [
+      "src/*.{js,jsx}",
+      "src/**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!src/styles/*.{js,jsx}",
+      "!src/index.js",
+      "!src/ServiceWorker.js"
     ]
   }
 }

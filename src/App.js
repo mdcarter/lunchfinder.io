@@ -13,7 +13,7 @@ export default class App extends Reflux.Component {
     super(props);
     this.store = Store;
 
-    console.log(Categories);
+    //console.log(Categories);
   }
 
   componentWillUnmount() {
