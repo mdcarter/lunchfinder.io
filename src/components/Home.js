@@ -1,5 +1,6 @@
 import React from 'react';
 import Reflux from 'reflux';
+import { Redirect } from 'react-router';
 
 import Address from './Address';
 import Store from './../Store';
@@ -23,7 +24,7 @@ export default class Home extends Reflux.Component {
 
   render() {
     if (this.state.restaurant) {
-      return null;
+      return <Redirect to={`/restaurant/${this.state.restaurant.id}`} push={true} />;
     }
 
     return (

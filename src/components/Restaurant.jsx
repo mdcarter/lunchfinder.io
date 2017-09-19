@@ -1,5 +1,6 @@
 import React from 'react';
 import Reflux from 'reflux';
+import { Redirect } from 'react-router';
 import GoogleMapReact from 'google-map-react';
 
 import Marker from './Marker';
@@ -12,6 +13,7 @@ import './../styles/Restaurant.css';
 export default class Restaurant extends Reflux.Component {
   constructor(props) {
     super(props);
+    console.log(props.match.params.id);
     this.store = Store;
   }
 
@@ -21,7 +23,7 @@ export default class Restaurant extends Reflux.Component {
 
   render() {
     if (!this.state.restaurant) {
-      return null;
+      return <Redirect to="/" push={true} />;
     }
 
     const coords = { lat: this.state.restaurant.location.lat, lng: this.state.restaurant.location.lng };

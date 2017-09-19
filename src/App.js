@@ -1,5 +1,6 @@
 import React from 'react';
 import Reflux from 'reflux';
+import { Switch, Route } from 'react-router-dom';
 import Store from './Store';
 
 import Home from './components/Home';
@@ -12,8 +13,7 @@ export default class App extends Reflux.Component {
   constructor(props) {
     super(props);
     this.store = Store;
-
-    //console.log(Categories);
+    console.log(Categories);
   }
 
   componentWillUnmount() {
@@ -23,8 +23,10 @@ export default class App extends Reflux.Component {
   render() {
     return (
       <div className="container-app">
-        <Home />
-        <Restaurant />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/restaurant/:id" component={Restaurant} />
+        </Switch>
       </div>
     );
   }
