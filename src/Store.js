@@ -37,8 +37,12 @@ export default class Store extends Reflux.Store {
     this.handlers.setCurrentAddress(this, address);
   }
 
-  onGetRestaurant() {
-    this.handlers.getRestaurant(this);
+  onSelectRestaurant() {
+    this.handlers.selectRestaurant(this);
+  }
+
+  onGetRestaurant(id) {
+    this.handlers.getRestaurant(this, id);
   }
 
   onGetDirections() {

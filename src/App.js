@@ -2,6 +2,7 @@ import React from 'react';
 import Reflux from 'reflux';
 import { Switch, Route } from 'react-router-dom';
 import Store from './Store';
+import Actions from './Actions';
 
 import Home from './components/Home';
 import Restaurant from './components/Restaurant';
@@ -14,6 +15,10 @@ export default class App extends Reflux.Component {
     super(props);
     this.store = Store;
     console.log(Categories);
+  }
+
+  componentDidMount() {
+    Actions.getCurrentLocation();
   }
 
   componentWillUnmount() {

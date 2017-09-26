@@ -13,8 +13,13 @@ import './../styles/Restaurant.css';
 export default class Restaurant extends Reflux.Component {
   constructor(props) {
     super(props);
-    console.log(props.match.params.id);
     this.store = Store;
+  }
+
+  componentDidMount() {
+    if (!this.state.restaurant && this.props.match.params.id) {
+      Actions.getRestaurant(this.props.match.params.id);
+    }
   }
 
   componentWillUnmount() {
@@ -22,8 +27,16 @@ export default class Restaurant extends Reflux.Component {
   }
 
   render() {
+    if (this.state.restaurant && this.props.match.params.id && this.props.match.params.id !== this.state.restaurant.id) {
+      return <Redirect to={`/restaurant/${this.state.restaurant.id}`} push={false} />;
+    }
+
     if (!this.state.restaurant) {
-      return <Redirect to="/" push={true} />;
+      if (this.props.match.params.id) {
+        return null;
+      } else {
+        return <Redirect to="/" push={true} />;
+      }
     }
 
     const coords = { lat: this.state.restaurant.location.lat, lng: this.state.restaurant.location.lng };
@@ -75,14 +88,16 @@ export default class Restaurant extends Reflux.Component {
             </a>
             <button onClick={Actions.getRestaurant}>Pas ce type de cuisine</button>
             {this.state.radius > process.env.REACT_APP_MINIMUM_RADIUS && <button onClick={Actions.reduceSearchRadius}>Moins loin de moi</button>}
-            <button onClick={Actions.getRestaurant}>Pas ce restaurant</button>
+            <button onClick={Actions.selectRestaurant}>Pas ce restaurant</button>
           </div>
         </section>
 
         <section className="map">
-          <GoogleMapReact center={coords} defaultZoom={16} options={options}>
-            <Marker lat={this.state.restaurant.location.lat} lng={this.state.restaurant.location.lng} link={this.state.restaurant.directions} />
-          </GoogleMapReact>
+          {coords && (
+            <GoogleMapReact center={coords} defaultZoom={16} options={options}>
+              <Marker lat={this.state.restaurant.location.lat} lng={this.state.restaurant.location.lng} link={this.state.restaurant.directions} />
+            </GoogleMapReact>
+          )}
         </section>
       </div>
     );

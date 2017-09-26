@@ -14,10 +14,6 @@ export default class Home extends Reflux.Component {
     this.store = Store;
   }
 
-  componentDidMount() {
-    Actions.getCurrentLocation();
-  }
-
   componentWillUnmount() {
     Reflux.Component.prototype.componentWillUnmount.call(this);
   }
@@ -34,7 +30,7 @@ export default class Home extends Reflux.Component {
           {this.state.status.retrievingLocation && <span> - Récupération de votre localisation...</span>}
           {this.state.status.fetchingData && <span> - Chargement...</span>}
           <hr />
-          {this.state.latitude && <button onClick={Actions.getRestaurant}>Choisir un restaurant</button>}
+          {this.state.latitude && <button onClick={Actions.selectRestaurant}>Choisir un restaurant</button>}
           <hr />
 
           {this.state.latitude && (

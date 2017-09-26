@@ -6,6 +6,7 @@ export default context => {
   const origin = new google.maps.LatLng(context.state.latitude, context.state.longitude);
   const destination = new google.maps.LatLng(context.state.restaurant.location.lat, context.state.restaurant.location.lng);
   const service = new google.maps.DistanceMatrixService();
+
   service.getDistanceMatrix(
     {
       origins: [origin],

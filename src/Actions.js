@@ -6,6 +6,7 @@ export default Reflux.createActions([
   'getCurrentAddress',
   'setCurrentAddress',
   'getCategories',
+  'selectRestaurant',
   'getRestaurant',
   'getDirections',
   'setDirectionsLink',
