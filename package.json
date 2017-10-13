@@ -4,6 +4,9 @@
   "author": "Maxime Dehaye <maxime.dehaye@gmail.com>",
   "homepage": "https://lunchfinder.io",
   "private": true,
+  "now": {
+    "alias": "lunchfinder.io",
+  },
   "dependencies": {
     "google-map-react": "^0.24.0",
     "husky": "^0.14.3",
