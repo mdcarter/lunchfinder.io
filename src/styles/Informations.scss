@@ -1,0 +1,66 @@
+section.restaurant {
+
+  header {
+    text-align: left;
+    padding: 145px 95px 80px 95px;
+    background: #fff;
+    max-height: 500px;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.07);
+
+    h3 {
+      margin: 0 0 10px 0;
+      font-size: 16px;
+      color: #4a4a4a;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+
+    .title {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 50px;
+
+      img {
+        flex-grow:0;
+        flex-shrink:0;
+        width: 65px;
+        height: 65px;
+        border-radius: 8px;
+        border: solid 1px #979797;
+        margin: 0 20px 0 0;
+      }
+
+      .subtitle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-weight: 300;
+        font-size: 18px;
+        color: #31bb9a;
+
+        h2 {
+          margin: 0 0 5px 0;
+          font-size: 40px;
+          line-height: 40px;
+          font-weight: bold;
+          color: #4a4a4a;
+        }
+      }
+    }
+
+    .informations {
+      font-size: 16px;
+      color: #4a4a4a;
+      font-weight: 300;
+      list-style: none;
+      max-width: 600px;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        margin: 0 10px 10px 0;
+      }
+    }
+  }
+
+}

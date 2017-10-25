@@ -4,6 +4,7 @@ import { Redirect } from 'react-router';
 import GoogleMapReact from 'google-map-react';
 
 import Marker from './Marker';
+import Informations from './Informations';
 import Store from './../Store';
 import Actions from './../Actions';
 import Theme from './../styles/map';
@@ -49,48 +50,7 @@ export default class Restaurant extends Reflux.Component {
 
     return (
       <div className="page-restaurant">
-        <section className="restaurant">
-          <header>
-            <h3>Votre restaurant du jour</h3>
-            <h2>{this.state.restaurant.name}</h2>
-            <div className="subtitle">
-              {this.state.restaurant.rating && (
-                <span className="rating">
-                  <strong>{this.state.restaurant.rating}/10</strong> ({this.state.restaurant.ratingSignals} avis)
-                </span>
-              )}
-            </div>
-          </header>
-
-          <ul className="informations">
-            <li>
-              {this.state.restaurant.distance && <span>{this.state.restaurant.distance} - </span>}
-              {this.state.restaurant.location.address}
-            </li>
-            {this.state.restaurant.duration && <li>{this.state.restaurant.duration} à pied</li>}
-            {this.state.restaurant.contact &&
-            this.state.restaurant.contact.phone && (
-              <li>
-                <a href={`tel:${this.state.restaurant.contact.phone}`}>{this.state.restaurant.contact.phone}</a>
-              </li>
-            )}
-            <li>{this.state.restaurant.categories[0].name}</li>
-            {this.state.restaurant.duration && (
-              <li>
-                <a href={this.state.restaurant.url}>{this.state.restaurant.url}</a>
-              </li>
-            )}
-          </ul>
-
-          <div className="actions">
-            <a target="_blank" href={this.state.restaurant.directions}>
-              Y aller
-            </a>
-            <button onClick={Actions.getRestaurant}>Pas ce type de cuisine</button>
-            {this.state.radius > process.env.REACT_APP_MINIMUM_RADIUS && <button onClick={Actions.reduceSearchRadius}>Moins loin de moi</button>}
-            <button onClick={Actions.selectRestaurant}>Pas ce restaurant</button>
-          </div>
-        </section>
+        <Informations {...this.state} />
 
         <section className="map">
           {coords && (

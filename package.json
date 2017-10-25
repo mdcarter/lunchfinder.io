@@ -5,7 +5,7 @@
   "homepage": "https://lunchfinder.io",
   "private": true,
   "now": {
-    "alias": "lunchfinder.io",
+    "alias": "lunchfinder.io"
   },
   "dependencies": {
     "google-map-react": "^0.24.0",
