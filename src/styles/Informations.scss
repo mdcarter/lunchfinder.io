@@ -59,6 +59,20 @@ section.restaurant {
       li {
         display: inline-block;
         margin: 0 10px 10px 0;
+        vertical-align: middle;
+        height: 25px;
+        line-height: 25px;
+
+        svg {
+          height: 25px;
+          vertical-align: top;
+          margin-right: 5px;
+        }
+      }
+
+      a {
+        color: #31bb9a;
+        text-decoration: none;
       }
     }
   }
