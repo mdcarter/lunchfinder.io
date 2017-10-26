@@ -15,13 +15,17 @@
 }
 
 .marker {
-  width: 30px;
-  height: 30px;
-  border-radius: 100%;
-  background: green;
-  color: white;
+  margin-top: -45px;
+  margin-left: -55px;
+  width: 130px;
+  height: 110px;
   text-align: center;
-  line-height: 30px;
+
+  .btn {
+    width: 100px;
+    margin: 10px auto 0 auto;
+  }
+
 }
 
 a[href^="http://maps.google.com/maps"]{display:none !important}

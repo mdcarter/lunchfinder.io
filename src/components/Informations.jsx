@@ -28,7 +28,7 @@ export default class Informations extends Component {
           <ul className="informations">
             {this.props.restaurant.location && (
               <li>
-                <Icons name="distance" />
+                <Icons icon="distance" />
                 {this.props.restaurant.distance && <span>{this.props.restaurant.distance} - </span>}
                 {this.props.restaurant.location.address}
               </li>
