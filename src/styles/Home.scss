@@ -8,6 +8,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 10;
     background: transparent url('./../images/photos-homepage-background.png') top right no-repeat;
     background-size: 1112px 827px;
 
@@ -17,6 +18,10 @@
   }
 
   section.main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 11;
     padding: 180px 0 0 130px;
     text-align: left;
   }
