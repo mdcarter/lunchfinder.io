@@ -25,28 +25,18 @@ export default class Home extends Reflux.Component {
 
     return (
       <div className="page-home">
-        <Address address={this.state.address || ''} updateAddress={Actions.setCurrentAddress} updateLocation={Actions.setCurrentLocation} />
-        <div className="wip todelete">
-          {this.state.status.retrievingLocation && <span> - Récupération de votre localisation...</span>}
-          {this.state.status.fetchingData && <span> - Chargement...</span>}
-          <hr />
-          {this.state.latitude && <button onClick={Actions.selectRestaurant}>Choisir un restaurant</button>}
-          <hr />
+        <section className="main">
+          <h2>Trouvez où manger chaque midi.</h2>
+          <h3>Avec LunchFinder, mettez tous vos collègues d’accord.</h3>
+          <form className="form">
+            <Address address={this.state.address || ''} updateAddress={Actions.setCurrentAddress} updateLocation={Actions.setCurrentLocation} />
+            <button className="find" onClick={Actions.selectRestaurant} disabled={!this.state.latitude ? true : false}>
+              Trouver un restaurant
+            </button>
+          </form>
+        </section>
 
-          {this.state.latitude && (
-            <div>
-              Vos coordonnées courante :{' '}
-              <strong>
-                {this.state.latitude},{this.state.longitude}
-              </strong>
-            </div>
-          )}
-          {this.state.address && (
-            <div>
-              Votre adresse courante : <strong>{this.state.address}</strong>
-            </div>
-          )}
-        </div>
+        <div className="background" />
       </div>
     );
   }

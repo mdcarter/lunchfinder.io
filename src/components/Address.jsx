@@ -19,11 +19,17 @@ class Address extends Component {
     const params = {
       value: this.props.address,
       onChange: this.props.updateAddress,
-      placeholder: 'Enter an address...',
+      placeholder: 'Entrez une adresse',
       autoFocus: true
     };
 
-    return <PlacesAutocomplete inputProps={params} onSelect={this.selectAddress} googleLogo={false} />;
+    const cssClasses = {
+      root: 'address-group',
+      input: 'address-input',
+      autocompleteContainer: 'address-autocomplete-container'
+    };
+
+    return <PlacesAutocomplete inputProps={params} classNames={cssClasses} onSelect={this.selectAddress} googleLogo={false} />;
   }
 }
 
