@@ -8,13 +8,18 @@ export default class Informations extends Component {
   render() {
     console.log(this.props.restaurant);
 
+    let image = '/default';
+    if (this.props.restaurant.bestPhoto && this.props.restaurant.bestPhoto.prefix && this.props.restaurant.bestPhoto.suffix) {
+      image = `${this.props.restaurant.bestPhoto.prefix}120x120${this.props.restaurant.bestPhoto.suffix}`;
+    }
+
     return (
       <section className="restaurant">
         <header>
           <h3>Votre restaurant du jour</h3>
 
           <section className="title">
-            <img src={`${this.props.restaurant.bestPhoto.prefix}120x120${this.props.restaurant.bestPhoto.suffix}`} alt={this.props.restaurant.name} />
+            <img src={image} alt={this.props.restaurant.name} />
             <div className="subtitle">
               <h2>{this.props.restaurant.name}</h2>
               {this.props.restaurant.rating && (

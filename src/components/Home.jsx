@@ -30,7 +30,7 @@ export default class Home extends Reflux.Component {
           <h3>Avec LunchFinder, mettez tous vos collègues d’accord.</h3>
           <form className="form">
             <Address address={this.state.address || ''} updateAddress={Actions.setCurrentAddress} updateLocation={Actions.setCurrentLocation} />
-            <button className="find" onClick={Actions.selectRestaurant} disabled={!this.state.latitude ? true : false}>
+            <button className="find" type="button" onClick={Actions.selectRestaurant} disabled={!this.state.latitude ? true : false}>
               Trouver un restaurant
             </button>
           </form>

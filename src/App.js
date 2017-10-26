@@ -7,14 +7,12 @@ import Actions from './Actions';
 import Home from './components/Home';
 import Restaurant from './components/Restaurant';
 
-import Categories from './tmp.json';
 import './styles/App.css';
 
 export default class App extends Reflux.Component {
   constructor(props) {
     super(props);
     this.store = Store;
-    console.log(Categories);
   }
 
   componentDidMount() {
