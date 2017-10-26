@@ -53,7 +53,7 @@ section.restaurant {
       color: #4a4a4a;
       font-weight: 300;
       list-style: none;
-      max-width: 600px;
+      max-width: 75%;
       padding: 0;
 
       li {
@@ -75,6 +75,27 @@ section.restaurant {
         text-decoration: none;
       }
     }
+  }
+
+  .btn {
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    border: 0;
+    color: #4a4a4a;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 9px 15px;
+    border-radius: 5px;
+    background-color: #ededed;
+    margin: 0 20px 0 0;
+  }
+
+  .btn.go {
+    font-weight: 300;
+    color: #fff;
+    background-color: #2b2b2b;
   }
 
 }
