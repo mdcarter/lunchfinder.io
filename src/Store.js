@@ -6,10 +6,8 @@ export default class Store extends Reflux.Store {
   constructor() {
     super();
     this.state = {
-      status: {
-        retrievingLocation: false,
-        fetchingData: false
-      },
+      retrievingLocation: false,
+      fetchingData: false,
       radius: process.env.REACT_APP_DEFAULT_RADIUS,
       address: null,
       latitude: null,

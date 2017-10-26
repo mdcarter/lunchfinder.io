@@ -31,7 +31,7 @@ export default class Home extends Reflux.Component {
           <form className="form">
             <Address address={this.state.address || ''} updateAddress={Actions.setCurrentAddress} updateLocation={Actions.setCurrentLocation} />
             <button className="find" type="button" onClick={Actions.selectRestaurant} disabled={!this.state.latitude ? true : false}>
-              Trouver un restaurant
+              {this.state.retrievingLocation ? 'chargement...' : 'Trouver un restaurant'}
             </button>
           </form>
         </section>

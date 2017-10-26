@@ -1,7 +1,8 @@
 import Actions from '../Actions';
 
 export default context => {
-  context.setState({ status: { retrievingLocation: true } });
+  console.log('get Location');
+  context.setState({ retrievingLocation: true });
 
   if ('geolocation' in navigator) {
     navigator.geolocation.getCurrentPosition(
@@ -9,9 +10,7 @@ export default context => {
         context.setState({
           latitude: coords.latitude,
           longitude: coords.longitude,
-          status: {
-            retrievingLocation: false
-          }
+          retrievingLocation: false
         });
         Actions.getCurrentAddress();
       },
