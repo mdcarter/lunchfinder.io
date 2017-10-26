@@ -11,7 +11,7 @@
     "precommit": "lint-staged",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",
-    "deploy": "npm run build && cd build && now && now alias",
+    "deploy": "npm run build && cd build && now && cd ../ && now alias",
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
