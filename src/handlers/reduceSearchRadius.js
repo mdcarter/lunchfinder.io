@@ -9,5 +9,5 @@ export default context => {
 
   context.setState({ radius: radius });
 
-  Actions.getRestaurant();
+  Actions.getRestaurant(context.state.restaurant.id);
 };

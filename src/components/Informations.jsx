@@ -6,8 +6,6 @@ import './../styles/Informations.css';
 
 export default class Informations extends Component {
   render() {
-    console.log(this.props.restaurant);
-
     let image = '/default';
     if (this.props.restaurant.bestPhoto && this.props.restaurant.bestPhoto.prefix && this.props.restaurant.bestPhoto.suffix) {
       image = `${this.props.restaurant.bestPhoto.prefix}120x120${this.props.restaurant.bestPhoto.suffix}`;
@@ -81,7 +79,7 @@ export default class Informations extends Component {
             <a className="btn go" target="_blank" href={this.props.restaurant.directions}>
               Y aller
             </a>
-            <button className="btn" onClick={Actions.getRestaurant}>
+            <button className="btn" onClick={Actions.excludeCurrentCategory}>
               Pas ce type de cuisine
             </button>
             {this.props.radius > process.env.REACT_APP_MINIMUM_RADIUS && (
@@ -94,6 +92,13 @@ export default class Informations extends Component {
             </button>
           </div>
         </header>
+
+        {this.props.excludedCategories.length !== 0 && (
+          <div style={{ marginTop: '40px' }}>
+            DEBUG : Catégories exclues ({this.props.excludedCategories.length}) :
+            {this.props.excludedCategories.map((category, i) => <span key={category.id}>{category.name}, </span>)}
+          </div>
+        )}
       </section>
     );
   }

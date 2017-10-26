@@ -57,4 +57,8 @@ export default class Store extends Reflux.Store {
   onReduceSearchRadius() {
     this.handlers.reduceSearchRadius(this);
   }
+
+  onExcludeCurrentCategory() {
+    this.handlers.excludeCurrentCategory(this);
+  }
 }
