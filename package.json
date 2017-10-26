@@ -7,6 +7,17 @@
   "now": {
     "alias": "lunchfinder.io"
   },
+  "scripts": {
+    "precommit": "lint-staged",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm run build-css && react-scripts build",
+    "deploy": "npm run build && cd build && now && now alias",
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "start-js": "react-scripts start",
+    "test": "react-scripts test --env=jsdom",
+    "coverage": "react-scripts test --env=jsdom --coverage"
+  },
   "dependencies": {
     "google-map-react": "^0.24.0",
     "husky": "^0.14.3",
@@ -30,17 +41,6 @@
     "reflux": "^6.4.1",
     "sinon": "^4.0.1",
     "raw-loader": "^0.5.1"
-  },
-  "scripts": {
-    "precommit": "lint-staged",
-    "start": "npm-run-all -p watch-css start-js",
-    "build": "npm run build-css && react-scripts build",
-    "deploy": "npm run build && cd build && now",
-    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
-    "start-js": "react-scripts start",
-    "test": "react-scripts test --env=jsdom",
-    "coverage": "react-scripts test --env=jsdom --coverage"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
