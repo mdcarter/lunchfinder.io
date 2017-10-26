@@ -51,7 +51,6 @@ export default class Restaurant extends Reflux.Component {
     return (
       <div className="page-restaurant">
         <Informations {...this.state} />
-
         <section className="map">
           {coords && (
             <GoogleMapReact center={coords} defaultZoom={16} options={options}>
@@ -59,6 +58,7 @@ export default class Restaurant extends Reflux.Component {
             </GoogleMapReact>
           )}
         </section>
+        <footer />
       </div>
     );
   }
