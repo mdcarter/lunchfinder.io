@@ -1,3 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default () => <span dangerouslySetInnerHTML={{ __html: require(`!raw-loader!./../images/icon-${this.props.icon}.svg`) }} />;
+export default class Icons extends Component {
+  render() {
+    const svg = require(`!raw-loader!./../images/icon-${this.props.icon}.svg`);
+    return <span dangerouslySetInnerHTML={{ __html: svg }} />;
+  }
+}
