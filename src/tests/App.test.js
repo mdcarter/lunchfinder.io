@@ -12,12 +12,12 @@ jest.mock('./../components/Home', () => {
 });
 
 describe('<App />', () => {
-  it('always renders a div', () => {
+  xit('always renders a div', () => {
     const wrapper = shallow(<App />);
     expect(wrapper.find('div').length).toBeGreaterThan(0);
   });
 
-  it('should call componentDidMount once and getCurrentLocation Action', () => {
+  xit('should call componentDidMount once and getCurrentLocation Action', () => {
     sinon.spy(App.prototype, 'componentDidMount');
     sinon.spy(Actions, 'getCurrentLocation');
 

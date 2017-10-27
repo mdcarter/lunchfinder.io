@@ -18,7 +18,7 @@ let context = {
   }
 };
 
-describe('setDirectionsLink handler', () => {
+describe.only('setDirectionsLink handler', () => {
   it('set directions link in state', () => {
     setDirectionsLink(context);
     expect(context.state.restaurant.directions).not.equal(false);
