@@ -10,10 +10,10 @@
   "scripts": {
     "precommit": "lint-staged",
     "start": "npm-run-all -p watch-css start-js",
-    "build": "npm run build-css && react-scripts build",
-    "deploy": "npm run build && cd build && now && cd ../ && now alias",
+    "build": "yarn run build-css && react-scripts build",
+    "deploy": "yarn run build && cd build && now && cd ../ && now alias",
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "watch-css": "yarn run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
     "test": "react-scripts test --env=jsdom --setupTestFrameworkScriptFile=raf/polyfill",
     "coverage": "react-scripts test --env=jsdom --coverage --setupTestFrameworkScriptFile=raf/polyfill",
