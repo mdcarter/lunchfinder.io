@@ -1,6 +1,7 @@
 import React from 'react';
 import Reflux from 'reflux';
 import { Redirect } from 'react-router';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import Address from './Address';
 import Store from './../Store';
@@ -20,7 +21,11 @@ export default class Home extends Reflux.Component {
 
   render() {
     if (this.state.restaurant) {
-      return <Redirect to={`/restaurant/${this.state.restaurant.id}`} push={true} />;
+      return (
+        <Router>
+          <Redirect to={`/restaurant/${this.state.restaurant.id}`} push={true} />
+        </Router>
+      );
     }
 
     return (
