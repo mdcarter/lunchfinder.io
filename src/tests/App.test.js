@@ -7,17 +7,17 @@ import Actions from './../Actions';
 
 jest.mock('./../components/Home', () => {
   return props => {
-    return <h2>coucou</h2>;
+    return <div />;
   };
 });
 
 describe('<App />', () => {
-  xit('always renders a div', () => {
+  it('always renders a div', () => {
     const wrapper = shallow(<App />);
     expect(wrapper.find('div').length).toBeGreaterThan(0);
   });
 
-  xit('should call componentDidMount once and getCurrentLocation Action', () => {
+  it('should call componentDidMount once and getCurrentLocation Action', () => {
     sinon.spy(App.prototype, 'componentDidMount');
     sinon.spy(Actions, 'getCurrentLocation');
 
