@@ -23,6 +23,6 @@ deployment:
     owner: mdcarter
     commands:
       - yarn run build
-      - ./node_modules/.bin/now /build -t ${NOW_TOKEN} --static 
+      - ./node_modules/.bin/now ./build -t ${NOW_TOKEN} --static 
       - ./node_modules/.bin/now -t ${NOW_TOKEN} alias
       - yarn run coverage:publish
