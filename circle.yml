@@ -15,6 +15,7 @@ dependencies:
 
 test:
   override:
+    - yarn run build-css
     - yarn run coverage
 
 deployment:
@@ -22,5 +23,5 @@ deployment:
     branch: master
     owner: mdcarter
     commands:
-      - yarn run deploy;
-      - yarn run coverage:publish;
+      - yarn run deploy
+      - yarn run coverage:publish
