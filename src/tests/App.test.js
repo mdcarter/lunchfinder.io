@@ -1,27 +1,29 @@
 import React from 'react';
-import Reflux from 'reflux';
 import { mount, shallow } from 'enzyme';
-import { expect } from 'chai';
 import sinon from 'sinon';
 
 import App from './../App';
+import Actions from './../Actions';
 
 jest.mock('./../components/Home', () => {
-  return 'div';
-});
-
-jest.mock('./../components/Restaurant', () => {
-  return 'div';
+  return props => {
+    return <h2>coucou</h2>;
+  };
 });
 
 describe('<App />', () => {
-  it('renders without crashing', () => {
-    shallow(<App />);
+  it('always renders a div', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find('div').length).toBeGreaterThan(0);
   });
 
-  it('calls Reflux.componentWillUnmount when unmounted', () => {
-    sinon.spy(Reflux.Component.prototype, 'componentWillUnmount');
-    mount(<App />).unmount();
-    expect(Reflux.Component.prototype.componentWillUnmount.calledOnce).to.equal(true);
+  it('should call componentDidMount once and getCurrentLocation Action', () => {
+    sinon.spy(App.prototype, 'componentDidMount');
+    sinon.spy(Actions, 'getCurrentLocation');
+
+    const wrapper = mount(<App />);
+
+    expect(App.prototype.componentDidMount.calledOnce).toEqual(true);
+    expect(Actions.getCurrentLocation.calledOnce).toEqual(true);
   });
 });

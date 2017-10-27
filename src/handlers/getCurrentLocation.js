@@ -1,7 +1,6 @@
 import Actions from '../Actions';
 
 export default context => {
-  console.log('get Location');
   context.setState({ retrievingLocation: true });
 
   if ('geolocation' in navigator) {

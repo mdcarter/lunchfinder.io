@@ -1,0 +1,25 @@
+machine:
+  timezone:
+    Europe/Paris
+  node:
+    version: 8
+  services:
+    - docker
+
+dependencies:
+  pre:
+    - npm uninstall -g npm
+    - curl -o- -L https://yarnpkg.com/install.sh | bash
+  override:
+    - yarn
+
+test:
+  override:
+    - yarn run coverage
+
+deployment:
+  production:
+    branch: master
+    owner: mdcarter
+    commands:
+      - yarn run deploy;
