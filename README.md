@@ -1,5 +1,6 @@
 ![Logo of the project](https://raw.githubusercontent.com/wearehive/project-guidelines/master/images/logo.sample.png)
 
+[![CircleCI](https://circleci.com/gh/mdcarter/lunchfinder.io.svg?style=shield)](https://circleci.com/gh/mdcarter/lunchfinder.io)
 [![CodeFactor](https://www.codefactor.io/repository/github/mdcarter/lunchfinder.io/badge)](https://www.codefactor.io/repository/github/mdcarter/lunchfinder.io)
 [![Coverage Status](https://coveralls.io/repos/github/mdcarter/lunchfinder.io/badge.svg?branch=master)](https://coveralls.io/github/mdcarter/lunchfinder.io?branch=master)
 
