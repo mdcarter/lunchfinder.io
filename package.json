@@ -5,10 +5,7 @@
   "homepage": "https://lunchfinder.io",
   "private": true,
   "now": {
-    "alias": "lunchfinder.io",
-    "env": {
-      "NODE_ENV": "production"
-    }
+    "alias": "lunchfinder.io"
   },
   "scripts": {
     "precommit": "lint-staged",

@@ -23,8 +23,4 @@ deployment:
     owner: mdcarter
     commands:
       - yarn run build
-      - cd build
-      - ./node_modules/.bin/now -t ${NOW_TOKEN}
-      - cd ..
-      - ./node_modules/.bin/now -t ${NOW_TOKEN} alias
       - yarn run coverage:publish
