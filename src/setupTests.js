@@ -10,3 +10,18 @@ jest.mock('react-places-autocomplete', () => {
     return <div />;
   };
 });
+
+jest.mock('google-map-react', () => {
+  return props => {
+    return <div />;
+  };
+});
+
+jest.mock('./utils/Request', () => {
+  class Request {
+    fetch(url, options) {
+      return Promise.resolve({});
+    }
+  }
+  return new Request();
+});

@@ -17,10 +17,12 @@ export default async (context, id) => {
 
   const restaurant = await Request.fetch(`${process.env.REACT_APP_FOURSQUARE_BASE_URL}venues/${id}?${Query.stringify(credentials)}`);
 
-  context.setState({
-    restaurant: restaurant.response.venue,
-    status: { fetchingData: false }
-  });
+  if (restaurant.response && restaurant.response.venue) {
+    context.setState({
+      restaurant: restaurant.response.venue,
+      status: { fetchingData: false }
+    });
+  }
 
   if (context.state.address) {
     Actions.getDirections();

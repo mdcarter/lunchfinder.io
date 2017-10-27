@@ -7,12 +7,12 @@ import Home from './../../components/Home';
 import Actions from './../../Actions';
 
 describe('<Home />', () => {
-  it('always renders a div', () => {
+  it('should always renders a div', () => {
     const wrapper = shallow(<Home />);
-    expect(wrapper.find('div').length).toBeGreaterThan(0);
+    expect(wrapper.find('div.page-home').length).toBeGreaterThan(0);
   });
 
-  it('always renders a div', () => {
+  it('should redirect if a restaurant is present in the store', () => {
     const wrapper = shallow(<Home />);
     wrapper.setState({ restaurant: true });
     expect(wrapper.find('Redirect').length).toBeGreaterThan(0);

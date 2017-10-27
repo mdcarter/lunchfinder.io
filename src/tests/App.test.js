@@ -7,9 +7,9 @@ import App from './../App';
 import Actions from './../Actions';
 
 describe('<App />', () => {
-  it('always renders a div', () => {
+  it('should always renders a div', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.find('div').length).toBeGreaterThan(0);
+    expect(wrapper.find('div.container-app').length).toBeGreaterThan(0);
   });
 
   it('should call componentDidMount once and getCurrentLocation Action', () => {
