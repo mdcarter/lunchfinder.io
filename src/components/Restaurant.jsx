@@ -1,7 +1,7 @@
 import React from 'react';
 import Reflux from 'reflux';
 import { Redirect } from 'react-router';
-import { BrowserRouter as Router } from 'react-router-dom';
+//import { BrowserRouter as Router } from 'react-router-dom';
 import GoogleMapReact from 'google-map-react';
 
 import Marker from './Marker';
@@ -29,14 +29,13 @@ export default class Restaurant extends Reflux.Component {
   }
 
   render() {
-    let coords;
-    if (this.state.restaurant && this.props.match && this.props.match.params.id && this.props.match.params.id !== this.state.restaurant.id) {
+    /*  if (this.state.restaurant && this.state.restaurant.id && this.props.match && this.props.match.params.id && this.props.match.params.id !== this.state.restaurant.id) {
       return (
         <Router>
           <Redirect to={`/restaurant/${this.state.restaurant.id}`} push={false} />
         </Router>
       );
-    }
+    }*/
 
     if (!this.state.restaurant) {
       if (this.props.match && this.props.match.params.id) {
@@ -46,6 +45,7 @@ export default class Restaurant extends Reflux.Component {
       }
     }
 
+    let coords;
     if (this.state.restaurant.location) {
       coords = { lat: this.state.restaurant.location.lat, lng: this.state.restaurant.location.lng };
     }
