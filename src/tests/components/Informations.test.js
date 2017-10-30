@@ -64,7 +64,7 @@ describe('<Informations />', () => {
   });
 
   it('should renders a loading button is location is pending', () => {
-    const withLoading = { ...state, ...{ retrievingLocation: true } };
+    const withLoading = { ...state, ...{ radius: 800, retrievingLocation: true } };
     const wrapper = shallow(<Informations {...withLoading} />);
     expect(
       wrapper
