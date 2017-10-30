@@ -62,6 +62,7 @@
       "src/**/*.{js,jsx}",
       "!**/node_modules/**",
       "!src/styles/*.{js,jsx}",
+      "!src/images/icons/*.{js,jsx}",
       "!src/index.js",
       "!src/ServiceWorker.js"
     ]
