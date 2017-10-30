@@ -30,6 +30,12 @@ describe('<Restaurant />', () => {
     expect(wrapper.find('div.page-restaurant').length).toBeGreaterThan(0);
   });
 
+  it('should render a Google Map if a restaurant is present with latitude and longitude', () => {
+    const wrapper = mount(<Restaurant />);
+    wrapper.setState({ restaurant: restaurant });
+    expect(wrapper.find('div.google-map-react').length).toBeGreaterThan(0);
+  });
+
   it('should not render a Google Map if a restaurant is present without latitude and longitude', () => {
     const wrapper = shallow(<Restaurant />);
     const withoutLocation = { id: 1 };
