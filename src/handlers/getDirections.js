@@ -19,6 +19,7 @@ export default context => {
 
         restaurant.duration = response.rows[0].elements[0].duration.text;
         restaurant.distance = response.rows[0].elements[0].distance.text;
+        restaurant.distanceInMeters = response.rows[0].elements[0].distance.value;
 
         context.setState({
           restaurant: restaurant
