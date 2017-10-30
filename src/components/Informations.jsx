@@ -31,7 +31,7 @@ export default class Informations extends Component {
           <ul className="informations">
             {this.props.restaurant.location && (
               <li>
-                <Icons icon="distance" />
+                <Icons name="Distance" />
                 {this.props.restaurant.distance && <span>{this.props.restaurant.distance} - </span>}
                 {this.props.restaurant.location.address}
               </li>
@@ -39,14 +39,14 @@ export default class Informations extends Component {
 
             {this.props.restaurant.duration && (
               <li>
-                <Icons name="duration" />
+                <Icons name="Duration" />
                 {this.props.restaurant.duration} à pieds
               </li>
             )}
 
             {this.props.restaurant.hours && (
               <li>
-                <Icons name="hours" />
+                <Icons name="Hours" />
                 {this.props.restaurant.hours.status}
               </li>
             )}
@@ -54,7 +54,7 @@ export default class Informations extends Component {
             {this.props.restaurant.contact &&
               this.props.restaurant.contact.phone && (
                 <li>
-                  <Icons name="phone" />
+                  <Icons name="Phone" />
                   <a href={`tel:${this.props.restaurant.contact.phone}`}>{this.props.restaurant.contact.phone}</a>
                 </li>
               )}
@@ -62,14 +62,14 @@ export default class Informations extends Component {
             {this.props.restaurant.categories &&
               this.props.restaurant.categories[0] && (
                 <li>
-                  <Icons name="category" />
+                  <Icons name="Category" />
                   {this.props.restaurant.categories[0].name}
                 </li>
               )}
 
             {this.props.restaurant.url && (
               <li>
-                <Icons name="url" />
+                <Icons name="Url" />
                 <a href={this.props.restaurant.url}>{this.props.restaurant.url}</a>
               </li>
             )}
@@ -89,13 +89,6 @@ export default class Informations extends Component {
             </button>
           </div>
         </header>
-
-        {this.props.excludedCategories.length !== 0 && (
-          <div style={{ marginTop: '40px' }}>
-            DEBUG : Catégories exclues ({this.props.excludedCategories.length}) :
-            {this.props.excludedCategories.map((category, i) => <span key={category.id}>{category.name}, </span>)}
-          </div>
-        )}
       </section>
     );
   }
