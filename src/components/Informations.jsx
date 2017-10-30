@@ -17,7 +17,7 @@ export default class Informations extends Component {
           <h3>Votre restaurant du jour</h3>
 
           <section className="title">
-            <img src={image} alt={this.props.restaurant.name} />
+            <img className="picture" src={image} alt={this.props.restaurant.name} />
             <div className="subtitle">
               <h2>{this.props.restaurant.name}</h2>
               {this.props.restaurant.rating && (
