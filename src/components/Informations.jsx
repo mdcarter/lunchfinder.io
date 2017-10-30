@@ -21,7 +21,7 @@ export default class Informations extends Component {
             <div className="subtitle">
               <h2>{this.props.restaurant.name}</h2>
               {this.props.restaurant.rating && (
-                <span className="rating">
+                <span className="rating-block">
                   <strong>★ {this.props.restaurant.rating}/10</strong> ({this.props.restaurant.ratingSignals} avis)
                 </span>
               )}
@@ -30,7 +30,7 @@ export default class Informations extends Component {
 
           <ul className="informations">
             {this.props.restaurant.location && (
-              <li>
+              <li className="distance-block">
                 <Icons name="Distance" />
                 {this.props.restaurant.distance && <span>{this.props.restaurant.distance} - </span>}
                 {this.props.restaurant.location.address}
@@ -38,14 +38,14 @@ export default class Informations extends Component {
             )}
 
             {this.props.restaurant.duration && (
-              <li>
+              <li className="duration-block">
                 <Icons name="Duration" />
                 {this.props.restaurant.duration} à pieds
               </li>
             )}
 
             {this.props.restaurant.hours && (
-              <li>
+              <li className="hours-block">
                 <Icons name="Hours" />
                 {this.props.restaurant.hours.status}
               </li>
@@ -53,7 +53,7 @@ export default class Informations extends Component {
 
             {this.props.restaurant.contact &&
               this.props.restaurant.contact.phone && (
-                <li>
+                <li className="contact-block">
                   <Icons name="Phone" />
                   <a href={`tel:${this.props.restaurant.contact.phone}`}>{this.props.restaurant.contact.phone}</a>
                 </li>
@@ -61,14 +61,14 @@ export default class Informations extends Component {
 
             {this.props.restaurant.categories &&
               this.props.restaurant.categories[0] && (
-                <li>
+                <li className="category-block">
                   <Icons name="Category" />
                   {this.props.restaurant.categories[0].name}
                 </li>
               )}
 
             {this.props.restaurant.url && (
-              <li>
+              <li className="url-block">
                 <Icons name="Url" />
                 <a href={this.props.restaurant.url}>{this.props.restaurant.url}</a>
               </li>
