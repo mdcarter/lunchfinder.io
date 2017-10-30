@@ -10,6 +10,5 @@ export default Reflux.createActions([
   'getRestaurant',
   'getDirections',
   'setDirectionsLink',
-  'reduceSearchRadius',
-  'excludeCurrentCategory'
+  'reduceSearchRadius'
 ]);

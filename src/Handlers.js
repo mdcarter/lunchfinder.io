@@ -7,7 +7,6 @@ import getRestaurant from './handlers/getRestaurant';
 import getDirections from './handlers/getDirections';
 import setDirectionsLink from './handlers/setDirectionsLink';
 import reduceSearchRadius from './handlers/reduceSearchRadius';
-import excludeCurrentCategory from './handlers/excludeCurrentCategory';
 
 class Handlers {}
 
@@ -20,6 +19,5 @@ Handlers.prototype.getRestaurant = getRestaurant;
 Handlers.prototype.getDirections = getDirections;
 Handlers.prototype.setDirectionsLink = setDirectionsLink;
 Handlers.prototype.reduceSearchRadius = reduceSearchRadius;
-Handlers.prototype.excludeCurrentCategory = excludeCurrentCategory;
 
 export default Handlers;

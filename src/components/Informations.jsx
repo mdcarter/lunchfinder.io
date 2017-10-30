@@ -79,9 +79,6 @@ export default class Informations extends Component {
             <a className="btn go" target="_blank" href={this.props.restaurant.directions}>
               {this.props.retrievingLocation ? 'chargement...' : 'Y aller'}
             </a>
-            <button className="btn" onClick={Actions.excludeCurrentCategory}>
-              {this.props.retrievingLocation ? 'chargement...' : 'Pas ce type de cuisine'}
-            </button>
             {this.props.radius > process.env.REACT_APP_MINIMUM_RADIUS && (
               <button className="btn" onClick={Actions.reduceSearchRadius}>
                 {this.props.retrievingLocation ? 'chargement...' : 'Moins loin de moi'}

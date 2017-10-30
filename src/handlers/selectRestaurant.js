@@ -1,25 +1,12 @@
 import Request from './../utils/Request';
 import Actions from './../Actions';
 import Query from 'query-string';
-import Categories from './../Categories.json';
 
 export default async context => {
   context.setState({ status: { fetchingData: true } });
 
-  let categoryId = Categories.map(function(category) {
-    let isExcluded = context.state.excludedCategories.find(excludedCategories => {
-      return excludedCategories.id === category.id;
-    });
-
-    if (isExcluded === undefined) {
-      return category.id;
-    }
-
-    return false;
-  });
-
   const params = {
-    categoryId: context.state.excludedCategories.length ? categoryId.filter(Boolean).join(',') : process.env.REACT_APP_FOURSQUARE_FOOD_CATEGORY,
+    categoryId: process.env.REACT_APP_FOURSQUARE_FOOD_CATEGORY,
     ll: context.state.latitude + ',' + context.state.longitude,
     radius: context.state.radius,
     limit: process.env.REACT_APP_DEFAULT_LIMIT,
