@@ -32,7 +32,7 @@ describe('<Restaurant />', () => {
 
   it('should not render a Google Map if a restaurant is present without latitude and longitude', () => {
     const wrapper = shallow(<Restaurant />);
-    const withoutLocation = { ...restaurant, ...{ restaurant: { location: false } } };
+    const withoutLocation = { id: 1 };
     wrapper.setState({ restaurant: withoutLocation });
     expect(wrapper.find('div.google-map-react').length).toEqual(0);
   });
