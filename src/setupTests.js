@@ -17,11 +17,4 @@ jest.mock('google-map-react', () => {
   };
 });
 
-jest.mock('./utils/Request', () => {
-  class Request {
-    fetch(url, options) {
-      return Promise.resolve({});
-    }
-  }
-  return new Request();
-});
+window.fetch = jest.fn().mockImplementation(() => Promise.resolve({ json: () => [] }));

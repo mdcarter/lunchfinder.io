@@ -1,10 +1,10 @@
-import Request from './../utils/Request';
 import Actions from './../Actions';
 
 export default async context => {
   context.setState({ fetchingData: true });
 
-  const address = await Request.fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${context.state.latitude},${context.state.longitude}`);
+  const res = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${context.state.latitude},${context.state.longitude}`);
+  const address = await res.json();
 
   if (address.results && address.results.length) {
     context.setState({

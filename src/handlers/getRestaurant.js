@@ -1,4 +1,3 @@
-import Request from './../utils/Request';
 import Actions from './../Actions';
 import Query from 'query-string';
 
@@ -15,7 +14,8 @@ export default async (context, id) => {
       .join('')
   };
 
-  const restaurant = await Request.fetch(`${process.env.REACT_APP_FOURSQUARE_BASE_URL}venues/${id}?${Query.stringify(credentials)}`);
+  const res = await fetch(`${process.env.REACT_APP_FOURSQUARE_BASE_URL}venues/${id}?${Query.stringify(credentials)}`);
+  const restaurant = await res.json();
 
   if (restaurant.response && restaurant.response.venue) {
     context.setState({

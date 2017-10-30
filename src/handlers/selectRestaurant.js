@@ -1,4 +1,3 @@
-import Request from './../utils/Request';
 import Actions from './../Actions';
 import Query from 'query-string';
 
@@ -23,7 +22,8 @@ export default async context => {
       .join('')
   };
 
-  const restaurants = await Request.fetch(`${process.env.REACT_APP_FOURSQUARE_BASE_URL}venues/search?${Query.stringify({ ...params, ...credentials })}`);
+  const res = await fetch(`${process.env.REACT_APP_FOURSQUARE_BASE_URL}venues/search?${Query.stringify({ ...params, ...credentials })}`);
+  const restaurants = await res.json();
 
   if (restaurants && restaurants.response && restaurants.response.venues) {
     const restaurant_id = restaurants.response.venues[Math.floor(Math.random() * restaurants.response.venues.length)].id;

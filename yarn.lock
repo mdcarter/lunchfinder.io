@@ -4864,9 +4864,9 @@ normalize.css@7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-7.0.0.tgz#abfb1dd82470674e0322b53ceb1aaf412938e4bf"
 
-now@8.3.10:
-  version "8.3.10"
-  resolved "https://registry.yarnpkg.com/now/-/now-8.3.10.tgz#13b0dc1b8651284d5c345bc969d664d11c7885e8"
+now@9.0.0-canary.6:
+  version "9.0.0-canary.6"
+  resolved "https://registry.yarnpkg.com/now/-/now-9.0.0-canary.6.tgz#34297d3a5aa756108fd73027efebae19c142b137"
 
 npm-path@^2.0.2:
   version "2.0.3"
