@@ -20,6 +20,8 @@ export default class Restaurant extends Reflux.Component {
   componentDidMount() {
     if (!this.state.restaurant && this.props.match && this.props.match.params.id) {
       Actions.getRestaurant(this.props.match.params.id);
+    } else if (!this.state.restaurant && (!this.props.match || !this.props.match.params.id)) {
+      History.push('/');
     }
   }
 
@@ -29,9 +31,6 @@ export default class Restaurant extends Reflux.Component {
 
   render() {
     if (!this.state.restaurant) {
-      if (this.props.match && !this.props.match.params.id) {
-        History.push('/');
-      }
       return null;
     }
 

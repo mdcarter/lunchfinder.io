@@ -5,6 +5,7 @@ import sinon from 'sinon';
 
 import Restaurant from './../../components/Restaurant';
 import Actions from './../../Actions';
+import History from './../../History';
 
 describe('<Restaurant />', () => {
   const restaurant = { id: 1, location: { lat: 0, lng: 0 } };
@@ -24,6 +25,14 @@ describe('<Restaurant />', () => {
 
     expect(Restaurant.prototype.componentDidMount.calledOnce).toEqual(true);
     expect(Actions.getRestaurant.calledOnce).toEqual(true);
+  });
+
+  it('should redirect to home if no id params is present and restaurant absent', () => {
+    sinon.spy(History, 'push');
+
+    const wrapper = shallow(<Restaurant />);
+
+    expect(History.push.calledOnce).toEqual(true);
   });
 
   it('should call componentWillUnmount once and Reflux componentWillUnmount method', () => {
