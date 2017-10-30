@@ -76,15 +76,15 @@ export default class Informations extends Component {
           </ul>
 
           <div className="actions">
-            <a className="btn go" target="_blank" href={this.props.restaurant.directions}>
+            <a className={this.props.retrievingLocation ? 'btn btn-loading go' : 'btn go'} target="_blank" href={this.props.restaurant.directions}>
               {this.props.retrievingLocation ? 'chargement...' : 'Y aller'}
             </a>
             {this.props.radius > process.env.REACT_APP_MINIMUM_RADIUS && (
-              <button className="btn" onClick={Actions.reduceSearchRadius}>
+              <button className="btn reduce-radius" onClick={Actions.reduceSearchRadius}>
                 {this.props.retrievingLocation ? 'chargement...' : 'Moins loin de moi'}
               </button>
             )}
-            <button className="btn" onClick={Actions.selectRestaurant}>
+            <button className={this.props.retrievingLocation ? 'btn btn-loading' : 'btn'} onClick={Actions.selectRestaurant}>
               {this.props.retrievingLocation ? 'chargement...' : 'Pas ce restaurant'}
             </button>
           </div>

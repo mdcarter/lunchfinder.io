@@ -62,4 +62,22 @@ describe('<Informations />', () => {
     const wrapper = shallow(<Informations {...withUrl} />);
     expect(wrapper.find('li.url-block').length).toBeGreaterThan(0);
   });
+
+  it('should renders a loading button is location is pending', () => {
+    const withLoading = { ...state, ...{ retrievingLocation: true } };
+    const wrapper = shallow(<Informations {...withLoading} />);
+    expect(
+      wrapper
+        .find('div.actions .btn')
+        .first()
+        .props().className
+    ).toEqual('btn btn-loading go');
+  });
+
+  it('should renders a reduce radius button if radius is not too low', () => {
+    const withRadius = { ...state, ...{ radius: 800 } };
+    process.env.REACT_APP_MINIMUM_RADIUS = 600;
+    const wrapper = shallow(<Informations {...withRadius} />);
+    expect(wrapper.find('button.reduce-radius').length).toBeGreaterThan(0);
+  });
 });
