@@ -1,12 +1,11 @@
 import React from 'react';
 import Reflux from 'reflux';
-import { Redirect } from 'react-router';
-//import { BrowserRouter as Router } from 'react-router-dom';
 import GoogleMapReact from 'google-map-react';
 
 import Marker from './Marker';
 import Informations from './Informations';
 import Store from './../Store';
+import History from './../History';
 import Actions from './../Actions';
 import Theme from './../styles/map';
 
@@ -29,20 +28,11 @@ export default class Restaurant extends Reflux.Component {
   }
 
   render() {
-    /*  if (this.state.restaurant && this.state.restaurant.id && this.props.match && this.props.match.params.id && this.props.match.params.id !== this.state.restaurant.id) {
-      return (
-        <Router>
-          <Redirect to={`/restaurant/${this.state.restaurant.id}`} push={false} />
-        </Router>
-      );
-    }*/
-
     if (!this.state.restaurant) {
-      if (this.props.match && this.props.match.params.id) {
-        return null;
-      } else {
-        return <Redirect to="/" push={true} />;
+      if (this.props.match && !this.props.match.params.id) {
+        History.push('/');
       }
+      return null;
     }
 
     let coords;

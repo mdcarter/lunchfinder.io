@@ -26,12 +26,6 @@ describe('<Restaurant />', () => {
     expect(Actions.getRestaurant.calledOnce).toEqual(true);
   });
 
-  xit('should redirect if a restaurant is present and not equal to the params', () => {
-    const wrapper = shallow(<Restaurant match={params} />);
-    wrapper.setState({ restaurant: restaurant });
-    expect(wrapper.find('Redirect').length).toBeGreaterThan(0);
-  });
-
   it('should call componentWillUnmount once and Reflux componentWillUnmount method', () => {
     sinon.spy(Restaurant.prototype, 'componentWillUnmount');
     sinon.spy(Reflux.Component.prototype, 'componentWillUnmount');

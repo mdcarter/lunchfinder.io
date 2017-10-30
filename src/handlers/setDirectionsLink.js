@@ -1,4 +1,5 @@
 import Query from 'query-string';
+import History from '../History';
 
 export default context => {
   let restaurant = context.state.restaurant;
@@ -11,7 +12,10 @@ export default context => {
   };
 
   restaurant.directions = `https://www.google.com/maps/dir/?${Query.stringify(params)}`;
+
   context.setState({
     restaurant: restaurant
   });
+
+  History.push(`/restaurant/${restaurant.id}`);
 };

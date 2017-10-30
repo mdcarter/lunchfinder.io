@@ -1,6 +1,7 @@
 import React from 'react';
 import Reflux from 'reflux';
-import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
+import { Switch, Route, Router } from 'react-router-dom';
+import History from './History';
 import Store from './Store';
 import Actions from './Actions';
 
@@ -26,7 +27,7 @@ export default class App extends Reflux.Component {
   render() {
     return (
       <div className="container-app">
-        <Router>
+        <Router history={History}>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/restaurant/:id" component={Restaurant} />

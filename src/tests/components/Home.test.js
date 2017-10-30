@@ -12,12 +12,6 @@ describe('<Home />', () => {
     expect(wrapper.find('div.page-home').length).toBeGreaterThan(0);
   });
 
-  it('should redirect if a restaurant is present in the store', () => {
-    const wrapper = shallow(<Home />);
-    wrapper.setState({ restaurant: true });
-    expect(wrapper.find('Redirect').length).toBeGreaterThan(0);
-  });
-
   it('should call componentWillUnmount once and Reflux componentWillUnmount method', () => {
     sinon.spy(Home.prototype, 'componentWillUnmount');
     sinon.spy(Reflux.Component.prototype, 'componentWillUnmount');
