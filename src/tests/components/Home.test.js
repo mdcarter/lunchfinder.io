@@ -7,15 +7,24 @@ import Home from './../../components/Home';
 import Actions from './../../Actions';
 
 describe('<Home />', () => {
+  let sandbox;
+
+  beforeEach(() => {
+    sandbox = sinon.sandbox.create();
+    sandbox.spy(Home.prototype, 'componentWillUnmount');
+    sandbox.spy(Reflux.Component.prototype, 'componentWillUnmount');
+  });
+
+  afterEach(() => {
+    sandbox.restore();
+  });
+
   it('should always renders a div', () => {
     const wrapper = shallow(<Home />);
     expect(wrapper.find('div.page-home').length).toBeGreaterThan(0);
   });
 
   it('should call componentWillUnmount once and Reflux componentWillUnmount method', () => {
-    sinon.spy(Home.prototype, 'componentWillUnmount');
-    sinon.spy(Reflux.Component.prototype, 'componentWillUnmount');
-
     const wrapper = shallow(<Home />).unmount();
 
     expect(Home.prototype.componentWillUnmount.calledOnce).toEqual(true);

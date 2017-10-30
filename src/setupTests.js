@@ -7,13 +7,13 @@ configure({ adapter: new Adapter() });
 
 jest.mock('react-places-autocomplete', () => {
   return props => {
-    return <div />;
+    return <div className="react-places-autocomplete" />;
   };
 });
 
 jest.mock('google-map-react', () => {
   return props => {
-    return <div />;
+    return <div className="google-map-react" />;
   };
 });
 

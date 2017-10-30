@@ -35,7 +35,7 @@ export default class Restaurant extends Reflux.Component {
     }
 
     let coords;
-    if (this.state.restaurant.location) {
+    if (this.state.restaurant.location && this.state.restaurant.location.lat && this.state.restaurant.location.lng) {
       coords = { lat: this.state.restaurant.location.lat, lng: this.state.restaurant.location.lng };
     }
 
