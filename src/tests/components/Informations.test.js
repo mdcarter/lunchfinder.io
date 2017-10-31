@@ -63,7 +63,7 @@ describe('<Informations />', () => {
     expect(wrapper.find('li.url-block').length).toBeGreaterThan(0);
   });
 
-  it('should renders a loading button is location is pending', () => {
+  it('should renders a loading button if location is pending', () => {
     const withLoading = { ...state, ...{ radius: 800, retrievingLocation: true } };
     const wrapper = shallow(<Informations {...withLoading} />);
     expect(
