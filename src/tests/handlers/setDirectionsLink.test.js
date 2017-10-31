@@ -4,7 +4,9 @@ import sinon from 'sinon';
 import setDirectionsLink from './../../handlers/setDirectionsLink';
 
 let context = {
-  setState(state) {},
+  setState(update) {
+    context.state = Object.assign(context.state, update);
+  },
   state: {
     address: 'Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France',
     restaurant: {
