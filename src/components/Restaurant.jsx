@@ -4,6 +4,7 @@ import GoogleMapReact from 'google-map-react';
 
 import Marker from './Marker';
 import Informations from './Informations';
+import Photos from './Photos';
 import Store from './../Store';
 import History from './../History';
 import Actions from './../Actions';
@@ -49,7 +50,10 @@ export default class Restaurant extends Reflux.Component {
 
     return (
       <div className="page-restaurant">
-        <Informations {...this.state} />
+        <section className="restaurant">
+          <Informations {...this.state} />
+          <Photos {...this.state} />
+        </section>
         <section className="map">
           {coords && (
             <GoogleMapReact center={coords} defaultZoom={16} options={options}>

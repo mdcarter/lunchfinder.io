@@ -12,7 +12,7 @@ describe('<Informations />', () => {
 
   it('should renders a div if a restaurant is present', () => {
     const wrapper = shallow(<Informations {...state} />);
-    expect(wrapper.find('section.restaurant').length).toBeGreaterThan(0);
+    expect(wrapper.find('header.restaurant-header').length).toBeGreaterThan(0);
   });
 
   it('should renders an image if a best photo is present', () => {
