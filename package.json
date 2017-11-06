@@ -7,6 +7,9 @@
   "now": {
     "alias": "lunchfinder.io"
   },
+  "engines": {
+    "node": "9.x.x"
+  },
   "scripts": {
     "precommit": "lint-staged",
     "start": "npm-run-all -p watch-css start-js",
