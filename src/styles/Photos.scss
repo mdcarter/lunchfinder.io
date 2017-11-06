@@ -1,11 +1,11 @@
 ul.restaurant-photos {
+  display: flex;
   list-style-type: none;
   padding: 50px 0 0 100px;
 
   li {
     height: 150px;
     width: 150px;
-    float:left;
     margin: 0 10px 0 0;
   }
 
