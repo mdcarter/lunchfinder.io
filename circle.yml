@@ -22,7 +22,7 @@ deployment:
     branch: master
     owner: mdcarter
     commands:
-      - yarn run build
-      - ./node_modules/.bin/now ./build -t ${NOW_TOKEN}
-      - ./node_modules/.bin/now -t ${NOW_TOKEN} alias --alias lunchfinder.io
+      #- yarn run build
+      #- ./node_modules/.bin/now ./build -t ${NOW_TOKEN}
+      #- ./node_modules/.bin/now -t ${NOW_TOKEN} alias --alias lunchfinder.io
       - yarn run coverage:publish
