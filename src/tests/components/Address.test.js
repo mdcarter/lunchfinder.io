@@ -1,10 +1,8 @@
 import React from 'react';
-import Reflux from 'reflux';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import sinon from 'sinon';
 
 import Address from './../../components/Address';
-import Actions from './../../Actions';
 
 describe('<Address />', () => {
   let sandbox;
@@ -32,7 +30,7 @@ describe('<Address />', () => {
     };
 
     const wrapper = mount(<Address {...props} />);
-    let call = await wrapper.instance().selectAddress('test');
+    await wrapper.instance().selectAddress('test');
 
     expect(updateAddress.calledOnce).toEqual(true);
     expect(updateLocation.calledOnce).toEqual(true);

@@ -1,11 +1,7 @@
 import React from 'react';
-import Reflux from 'reflux';
 import { mount, shallow } from 'enzyme';
-import sinon from 'sinon';
 
 import Informations from './../../components/Informations';
-import Actions from './../../Actions';
-import History from './../../History';
 
 describe('<Informations />', () => {
   const state = { restaurant: { id: 1, location: { lat: 0, lng: 0 } } };

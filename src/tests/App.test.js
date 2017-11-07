@@ -16,7 +16,7 @@ describe('<App />', () => {
     sinon.spy(App.prototype, 'componentDidMount');
     sinon.spy(Actions, 'getCurrentLocation');
 
-    const wrapper = shallow(<App />);
+    shallow(<App />);
 
     expect(App.prototype.componentDidMount.calledOnce).toEqual(true);
     expect(Actions.getCurrentLocation.calledOnce).toEqual(true);
@@ -26,7 +26,7 @@ describe('<App />', () => {
     sinon.spy(App.prototype, 'componentWillUnmount');
     sinon.spy(Reflux.Component.prototype, 'componentWillUnmount');
 
-    const wrapper = shallow(<App />).unmount();
+    shallow(<App />).unmount();
 
     expect(App.prototype.componentWillUnmount.calledOnce).toEqual(true);
     expect(Reflux.Component.prototype.componentWillUnmount.calledOnce).toEqual(true);

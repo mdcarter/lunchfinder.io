@@ -45,27 +45,27 @@ describe('<Restaurant />', () => {
 
   it('should call getRestaurant Action if a params is present and restaurant absent', () => {
     const params = { params: { id: 2 } };
-    const wrapper = shallow(<Restaurant match={params} />);
+    shallow(<Restaurant match={params} />);
 
     expect(Restaurant.prototype.componentDidMount.calledOnce).toEqual(true);
     expect(Actions.getRestaurant.calledOnce).toEqual(true);
   });
 
   it('should redirect to home if no params is present and restaurant absent', () => {
-    const wrapper = shallow(<Restaurant />);
+    shallow(<Restaurant />);
 
     expect(History.push.calledOnce).toEqual(true);
   });
 
   it('should redirect to home if no id params is present and restaurant absent', () => {
     const params = { params: { toto: 'tutu' } };
-    const wrapper = shallow(<Restaurant match={params} />);
+    shallow(<Restaurant match={params} />);
 
     expect(History.push.calledOnce).toEqual(true);
   });
 
   it('should call componentWillUnmount once and Reflux componentWillUnmount method', () => {
-    const wrapper = shallow(<Restaurant />).unmount();
+    shallow(<Restaurant />).unmount();
 
     expect(Restaurant.prototype.componentWillUnmount.calledOnce).toEqual(true);
     expect(Reflux.Component.prototype.componentWillUnmount.calledOnce).toEqual(true);

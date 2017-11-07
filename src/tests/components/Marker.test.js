@@ -1,10 +1,7 @@
 import React from 'react';
-import Reflux from 'reflux';
-import { mount, shallow } from 'enzyme';
-import sinon from 'sinon';
+import { shallow } from 'enzyme';
 
 import Marker from './../../components/Marker';
-import Actions from './../../Actions';
 
 describe('<Marker />', () => {
   it('should always renders a div', () => {

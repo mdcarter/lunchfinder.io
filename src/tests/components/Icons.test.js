@@ -1,10 +1,7 @@
 import React from 'react';
-import Reflux from 'reflux';
-import { mount, shallow } from 'enzyme';
-import sinon from 'sinon';
+import { mount } from 'enzyme';
 
 import Icons from './../../components/Icons';
-import Actions from './../../Actions';
 
 describe('<Icons />', () => {
   it('should always renders a svg', () => {

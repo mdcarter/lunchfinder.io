@@ -1,10 +1,9 @@
 import React from 'react';
 import Reflux from 'reflux';
-import { mount, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
 import Home from './../../components/Home';
-import Actions from './../../Actions';
 
 describe('<Home />', () => {
   let sandbox;
@@ -58,7 +57,7 @@ describe('<Home />', () => {
   });
 
   it('should call componentWillUnmount once and Reflux componentWillUnmount method', () => {
-    const wrapper = shallow(<Home />).unmount();
+    shallow(<Home />).unmount();
 
     expect(Home.prototype.componentWillUnmount.calledOnce).toEqual(true);
     expect(Reflux.Component.prototype.componentWillUnmount.calledOnce).toEqual(true);
