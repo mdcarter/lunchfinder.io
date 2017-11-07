@@ -64,6 +64,7 @@
       "!src/styles/*.{js,jsx}",
       "!src/images/icons/*.{js,jsx}",
       "!src/index.js",
+      "!src/Store.js",
       "!src/ServiceWorker.js"
     ]
   }
