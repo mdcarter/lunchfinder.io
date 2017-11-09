@@ -19,12 +19,15 @@ describe('getCurrentLocation handler', () => {
     sandbox.spy(Actions, 'getCurrentAddress');
     navigator.geolocation = {
       getCurrentPosition: function(callback) {
-        callback({
-          coords: {
-            latitude: 1,
-            longitude: 2
-          }
-        });
+        callback(
+          {
+            coords: {
+              latitude: 1,
+              longitude: 2
+            }
+          },
+          false
+        );
       }
     };
   });
@@ -37,5 +40,16 @@ describe('getCurrentLocation handler', () => {
   it('should call getCurrentAddress action if coordinates are provided', () => {
     getCurrentLocation(context);
     expect(Actions.getCurrentAddress.calledOnce).equal(true);
+  });
+
+  it('should not call getCurrentAddress action if coordinates are not provided', () => {
+    navigator.geolocation = {
+      getCurrentPosition: function(callback, error) {
+        error(true);
+      }
+    };
+
+    getCurrentLocation(context);
+    expect(Actions.getCurrentAddress.calledOnce).equal(false);
   });
 });
