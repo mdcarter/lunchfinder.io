@@ -18,13 +18,13 @@ describe('getCurrentAddress handler', () => {
 
   beforeEach(() => {
     sandbox = sinon.sandbox.create();
-    sandbox.spy(Actions, 'getDirections');
     sinon.stub(window, 'fetch');
+    sandbox.spy(Actions, 'getDirections');
   });
 
   afterEach(() => {
-    sandbox.restore();
     window.fetch.restore();
+    sandbox.restore();
   });
 
   it('should call getDirections action if address is provided and a restaurant is present', async () => {
