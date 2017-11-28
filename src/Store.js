@@ -12,8 +12,7 @@ export default class Store extends Reflux.Store {
       address: null,
       latitude: null,
       longitude: null,
-      restaurant: null,
-      excludedCategories: []
+      restaurant: null
     };
 
     this.handlers = new Handlers();
