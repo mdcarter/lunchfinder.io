@@ -28,7 +28,7 @@
     "google-map-react": "0.25.0",
     "history": "4.7.2",
     "husky": "0.14.3",
-    "lint-staged": "7.0.5",
+    "lint-staged": "7.1.0",
     "node-sass-chokidar": "0.0.3",
     "normalize.css": "7.0.0",
     "now": "9.0.0-canary.14",
