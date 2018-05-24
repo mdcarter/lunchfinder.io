@@ -42,7 +42,7 @@
     "react-places-autocomplete": "5.4.3",
     "react-router-dom": "4.2.2",
     "react-scripts": "1.0.17",
-    "react-test-renderer": "16.3.2",
+    "react-test-renderer": "16.4.0",
     "reflux": "6.4.1",
     "sinon": "4.1.2"
   },
