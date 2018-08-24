@@ -74,8 +74,7 @@
     font-weight: 300;
     font-size: 17px;
     color: #9b9b9b;
-    min-width: 435px;
-    max-width: 480px;
+    min-width: 620px;
     @media all and (max-width: 768px) {  
       min-width: 70%; 
       max-width: 70%;
@@ -91,22 +90,14 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    width: 240px;
+    width: 55px;
     height: 55px;
     padding: 0;
     margin: 0;
     border: 0;
-    font-size: 16px;
-    color: #fff;
     background-color: #24b29c;
-    text-transform: uppercase;
-    font-weight: 600;
     cursor: pointer;
     outline: none;
-    
-    @media all and (max-width: 768px) { 
-      width: 55px;
-    }
   }
 
   .find:hover {
