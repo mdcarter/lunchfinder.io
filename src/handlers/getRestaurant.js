@@ -7,6 +7,7 @@ export default async (context, id) => {
   const credentials = {
     client_id: process.env.REACT_APP_FOURSQUARE_CLIENT,
     client_secret: process.env.REACT_APP_FOURSQUARE_SECRET,
+    locale: 'en',
     v: new Date()
       .toISOString()
       .slice(0, 10)

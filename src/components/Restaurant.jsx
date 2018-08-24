@@ -26,6 +26,9 @@ export default class Restaurant extends Reflux.Component {
     if (!this.state.restaurant && (!this.props.match || !this.props.match.params.id)) {
       History.push('/');
     }
+    if (!this.state.latitude) {
+      Actions.getCurrentLocation();
+    }
   }
 
   componentWillUnmount() {

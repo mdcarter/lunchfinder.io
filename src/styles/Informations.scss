@@ -1,0 +1,121 @@
+.restaurant-header {
+  background: #fff;
+  padding: 40px 120px 80px 140px;
+  border-bottom: solid 1px #e0e0e0;
+
+  h3 {
+    margin-top: 55px;
+    font-size: 21px;
+    font-weight: 500;
+    color: #4a4a4a;
+  }
+
+  .details {
+    max-width: 780px;
+    margin-top: 15px;
+    padding: 30px;
+    background-color: #f4f4f4;
+    position: relative;
+
+    h2 {
+      font-size: 30px;
+      font-weight: bold;
+      color: #4a4a4a;
+      max-width: 70%;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 10px 0 0 0;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        font-size: 15px;
+        color: #4a4a4a;
+
+        a {
+          color: #4a4a4a;
+          text-decoration: none;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+      li:not(:last-child):after  {
+          content: "-";
+          padding: 0 5px;
+      }
+    }
+
+    .rating-block {
+      position: absolute;
+      height: 30px;
+      top: 30px;
+      right: 25px;
+      font-size: 14px;
+      color: #1542a6;
+
+      .rating {
+        background-color: #1542a6;
+        color: #fff;
+        padding: 5px 12px;
+        margin-left: 8px;
+        font-size: 17px;
+        font-weight: 400;
+
+        sup {
+        font-size: 11px;
+        padding-left: 3px;
+        top: -4px;
+        font-weight: 100;
+        }
+      }
+    }
+  }
+
+  ul.distance {
+    list-style-type: none;
+    margin: 25px 0 0 30px;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      font-size: 17px;
+      color: #4a4a4a;
+      padding: 0 25px 0 0;
+
+      svg {
+        vertical-align: bottom;
+        padding-right: 5px;
+      }
+    }
+
+    .distance-block span {
+      color: #a9a9a9;
+    }
+  }
+
+  .actions {
+    margin: 20px 0 0 30px;
+
+    a, button {
+      outline: none;
+      margin: 0 15px 0 0;
+      font-size: 18px;
+      font-weight: 400;
+      color: #ffffff;
+      padding: 7px 25px;
+      border-radius: 5px;
+      background-color: #24b29c;
+      text-decoration: none;
+    }
+
+    button {
+      height: 39px;
+      background: #fff;
+      color: #24b29c;
+      border: 1px solid #24b29c;
+    }
+  }
+}

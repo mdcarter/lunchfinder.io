@@ -1,0 +1,18 @@
+.page-restaurant {
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  background-color: #f4f4f4;
+
+  .restaurant {
+    flex-grow: 1;
+  }
+
+  .map {
+    flex-basis: 400px;
+
+    @media all and (max-width: 768px) {
+      display: none;
+    }
+  }
+}
