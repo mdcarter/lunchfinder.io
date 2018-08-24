@@ -9,20 +9,40 @@
   
   .main  {
     padding: 40px 0 40px 190px;
+
+    @media all and (max-width: 768px) {
+     padding: 40px 10px 0 10px;
+    } 
+
+    .logo-home {
+      @media all and (max-width: 768px) { margin-left: 10px; }
+    }
+
     h2 {
       margin-top: 170px;
       font-size: 30px;
       font-weight: bold;
+      @media all and (max-width: 768px) { 
+        margin-top: 50px;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
     }
     h3 {
       margin-top: 10px;
       font-size: 25px;
       font-weight: 500;
+      @media all and (max-width: 768px) { margin-left: 10px; }
     }
     h4 {
       margin-top: 30px;
       font-size: 17px;
       font-weight: 500;
+      @media all and (max-width: 768px) {
+        margin-left: 10px;
+        font-size: 16px;
+        line-height: 1.63;
+      }
     }
   }
 
@@ -33,6 +53,7 @@
     background: #fff;
     overflow: hidden;
     box-shadow: 0 0 13px 3px rgba(0, 0, 0, 0.18);
+    @media all and (max-width: 768px) { margin-top: 30px }
   }
 
   #PlacesAutocomplete__autocomplete-container > div {
@@ -55,6 +76,11 @@
     color: #9b9b9b;
     min-width: 435px;
     max-width: 480px;
+    @media all and (max-width: 768px) {  
+      min-width: 70%; 
+      max-width: 70%;
+      margin-left: 15px;
+    }
   }
 
   .address-input::placeholder {
@@ -67,7 +93,7 @@
     right: 10px;
     width: 240px;
     height: 55px;
-    padding: 0 30px;
+    padding: 0;
     margin: 0;
     border: 0;
     font-size: 16px;
@@ -77,6 +103,10 @@
     font-weight: 600;
     cursor: pointer;
     outline: none;
+    
+    @media all and (max-width: 768px) { 
+      width: 55px;
+    }
   }
 
   .find:hover {
@@ -84,6 +114,7 @@
   }
 
   .locate {
+    outline: none;
     margin-top: 15px;
     padding: 0;
     border: 0;
@@ -96,6 +127,8 @@
       vertical-align: bottom;
       margin-right: 5px;
     }
+
+    @media all and (max-width: 768px) { margin-left: 10px; }
   }
 
   footer {
@@ -115,5 +148,11 @@
     a:hover {
       text-decoration: underline;
     }
+
+     @media all and (max-width: 768px) {
+      bottom: 20px;
+      font-weight: 200;
+      font-size: 12px;
+     }
   }
 }

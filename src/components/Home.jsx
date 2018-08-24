@@ -35,7 +35,8 @@ export default class Home extends Reflux.Component {
               onClick={Actions.selectRestaurant}
               disabled={!this.state.latitude ? true : false}
             >
-              {this.state.retrievingLocation ? 'Loading...' : 'Find a restaurant !'}
+              {this.state.retrievingLocation === false && <Icons name="Arrow" />}
+              {this.state.retrievingLocation !== false && <Icons name="Loader" />}
             </button>
           </form>
           <button className="locate" onClick={Actions.getCurrentLocation}>

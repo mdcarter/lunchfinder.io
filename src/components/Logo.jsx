@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default props => (
-  <svg width={149} height={60} {...props}>
+  <svg className="logo-home" width={149} height={60} {...props}>
     <g fill="none" fillRule="evenodd">
       <path
         fill="#FFF"
