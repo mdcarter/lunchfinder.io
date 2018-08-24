@@ -12,16 +12,6 @@ describe('<App />', () => {
     expect(wrapper.find('div.container-app').length).toBeGreaterThan(0);
   });
 
-  it('should call componentDidMount once and getCurrentLocation Action', () => {
-    sinon.spy(App.prototype, 'componentDidMount');
-    sinon.spy(Actions, 'getCurrentLocation');
-
-    shallow(<App />);
-
-    expect(App.prototype.componentDidMount.calledOnce).toEqual(true);
-    expect(Actions.getCurrentLocation.calledOnce).toEqual(true);
-  });
-
   it('should call componentWillUnmount once and Reflux componentWillUnmount method', () => {
     sinon.spy(App.prototype, 'componentWillUnmount');
     sinon.spy(Reflux.Component.prototype, 'componentWillUnmount');
