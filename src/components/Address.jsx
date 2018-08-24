@@ -19,7 +19,7 @@ class Address extends Component {
     const params = {
       value: this.props.address,
       onChange: this.props.updateAddress,
-      placeholder: 'Entrez une adresse',
+      placeholder: 'Enter your location',
       autoFocus: true
     };
 

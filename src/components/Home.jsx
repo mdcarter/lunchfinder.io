@@ -1,9 +1,11 @@
 import React from 'react';
 import Reflux from 'reflux';
 
+import Logo from './Logo';
 import Address from './Address';
 import Store from './../Store';
 import Actions from './../Actions';
+import Icons from './Icons';
 
 import './../styles/Home.css';
 
@@ -21,8 +23,10 @@ export default class Home extends Reflux.Component {
     return (
       <div className="page-home">
         <section className="main">
-          <h2>Trouvez où manger chaque midi.</h2>
-          <h3>Avec LunchFinder, mettez tous vos collègues d’accord.</h3>
+          <Logo />
+          <h2>« Where do we eat today ? »</h2>
+          <h3>Ask LunchFinder !</h3>
+          <h4>This app helps you and your co-workers find a random place to lunch everyday.</h4>
           <form className="form">
             <Address address={this.state.address || ''} updateAddress={Actions.setCurrentAddress} updateLocation={Actions.setCurrentLocation} />
             <button
@@ -31,12 +35,17 @@ export default class Home extends Reflux.Component {
               onClick={Actions.selectRestaurant}
               disabled={!this.state.latitude ? true : false}
             >
-              {this.state.retrievingLocation ? 'chargement...' : 'Trouver un restaurant'}
+              {this.state.retrievingLocation ? 'Loading...' : 'Find a restaurant !'}
             </button>
           </form>
+          <button className="locate" onClick={Actions.getCurrentLocation}>
+            <Icons name="Locate" /> My location
+          </button>
         </section>
 
-        <div className="background" />
+        <footer>
+          Handmade by <a href="https://twitter.com/sandralaurin">Sandra Laurin</a> & <a href="https://twitter.com/mdcarter">Maxime Dehaye</a>
+        </footer>
       </div>
     );
   }
