@@ -5,7 +5,7 @@ import Icons from './../../components/Icons';
 
 describe('<Icons />', () => {
   it('should always renders a svg', () => {
-    const wrapper = mount(<Icons name="Url" />);
+    const wrapper = mount(<Icons name="Arrow" />);
     expect(wrapper.find('svg').length).toBeGreaterThan(0);
   });
 
