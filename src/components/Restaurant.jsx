@@ -4,6 +4,7 @@ import GoogleMapReact from 'google-map-react';
 
 import Marker from './Marker';
 import Informations from './Informations';
+import Tabs from './Tabs';
 import Photos from './Photos';
 import Reviews from './Reviews';
 import Store from './../Store';
@@ -56,6 +57,7 @@ export default class Restaurant extends Reflux.Component {
       <div className="page-restaurant">
         <section className="restaurant">
           <Informations {...this.state} />
+          <Tabs {...this.state} />
           <Photos {...this.state} />
           <Reviews {...this.state} />
         </section>

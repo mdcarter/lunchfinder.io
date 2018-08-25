@@ -7,6 +7,8 @@ import getRestaurant from './handlers/getRestaurant';
 import getDirections from './handlers/getDirections';
 import setDirectionsLink from './handlers/setDirectionsLink';
 import reduceSearchRadius from './handlers/reduceSearchRadius';
+import selectReviewsTab from './handlers/selectReviewsTab';
+import selectPhotosTab from './handlers/selectPhotosTab';
 
 class Handlers {}
 
@@ -19,5 +21,7 @@ Handlers.prototype.getRestaurant = getRestaurant;
 Handlers.prototype.getDirections = getDirections;
 Handlers.prototype.setDirectionsLink = setDirectionsLink;
 Handlers.prototype.reduceSearchRadius = reduceSearchRadius;
+Handlers.prototype.selectReviewsTab = selectReviewsTab;
+Handlers.prototype.selectPhotosTab = selectPhotosTab;
 
 export default Handlers;

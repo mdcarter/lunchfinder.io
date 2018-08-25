@@ -4,7 +4,7 @@ import './../styles/Reviews.css';
 
 export default class Reviews extends Component {
   render() {
-    if (!this.props.restaurant.tips || this.props.restaurant.tips.count === 0) {
+    if (this.props.tab !== 'reviews') {
       return null;
     }
 

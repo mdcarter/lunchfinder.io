@@ -12,7 +12,8 @@ export default class Store extends Reflux.Store {
       address: null,
       latitude: null,
       longitude: null,
-      restaurant: null
+      restaurant: null,
+      tab: 'reviews'
     };
 
     this.handlers = new Handlers();
@@ -57,5 +58,13 @@ export default class Store extends Reflux.Store {
 
   onExcludeCurrentCategory() {
     this.handlers.excludeCurrentCategory(this);
+  }
+
+  onSelectReviewsTab() {
+    this.handlers.selectReviewsTab(this);
+  }
+
+  onSelectPhotosTab() {
+    this.handlers.selectPhotosTab(this);
   }
 }

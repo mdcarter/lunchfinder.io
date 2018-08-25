@@ -4,7 +4,7 @@ import './../styles/Photos.css';
 
 export default class Photos extends Component {
   render() {
-    if (!this.props.restaurant.photos || this.props.restaurant.photos.count === 0) {
+    if (this.props.tab !== 'photos') {
       return null;
     }
 
