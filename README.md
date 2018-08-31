@@ -1,4 +1,4 @@
-![Logo of the project](https://raw.githubusercontent.com/wearehive/project-guidelines/master/images/logo.sample.png)
+![LunchFinder](https://raw.githubusercontent.com/mdcarter/lunchfinder.io/master/public/logo.png) 
 
 [![CircleCI](https://circleci.com/gh/mdcarter/lunchfinder.io.svg?style=shield)](https://circleci.com/gh/mdcarter/lunchfinder.io)
 [![CodeFactor](https://www.codefactor.io/repository/github/mdcarter/lunchfinder.io/badge)](https://www.codefactor.io/repository/github/mdcarter/lunchfinder.io)
@@ -6,7 +6,7 @@
 [![devDependencies Status](https://david-dm.org/mdcarter/lunchfinder.io/dev-status.svg)](https://david-dm.org/mdcarter/lunchfinder.io?type=dev)
 
 # Lunchfinder
-> Additional information or tag line
+> « Where do we eat today ? »
 
 Lunchfinder is a simple application that helps you choose quickly a restaurant to eat around your location.
 
@@ -18,8 +18,6 @@ running.
 ```shell
 yarn start
 ```
-
-Here you should say what actually happens when you execute the code above.
 
 ## Developing
 
