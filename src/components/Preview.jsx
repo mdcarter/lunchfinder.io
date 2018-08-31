@@ -72,8 +72,8 @@ export default class Preview extends Component {
       return null;
     }
 
-    const reviews = this.props.restaurant.tips.groups[0].items;
-    const photos = this.props.restaurant.photos.groups[1].items;
+    const reviews = this.props.restaurant.tips ? this.props.restaurant.tips.groups[0].items : [];
+    const photos = this.props.restaurant.photos ? this.props.restaurant.photos.groups[1].items : [];
 
     if (photos.length === 0 && reviews.length === 0) {
       return this.renderEmpty();

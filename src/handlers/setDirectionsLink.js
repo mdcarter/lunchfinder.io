@@ -13,8 +13,6 @@ export default context => {
 
   restaurant.directions = `https://www.google.com/maps/dir/?${Query.stringify(params)}`;
 
-  console.log(restaurant.directions);
-
   context.setState({
     restaurant: restaurant
   });
