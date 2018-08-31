@@ -40,17 +40,33 @@ export default class Preview extends Component {
               {reviews.map((review, i) => (
                 <li className="review" key={i}>
                   <div className="photo">
-                    <img src={review.user.photo.prefix + '100x100' + review.user.photo.suffix} alt={review.user.firstname + ' ' + review.user.lastname} />
+                    <img src={review.user.photo.prefix + '100x100' + review.user.photo.suffix} alt={review.user.firstName + ' ' + review.user.lastName} />
                   </div>
                   <section className="main">
+                    <header>
+                      {review.user.firstName} {review.user.lastName} <span>{new Date(review.createdAt * 1000).toLocaleDateString()}</span>
+                    </header>
                     <p>{review.text}</p>
                   </section>
                 </li>
               ))}
+              <a className="see-more" target="_blank" href={this.props.restaurant.canonicalUrl}>
+                see more reviews on Foursquare
+              </a>
             </ul>
           </section>
           <section className="photos">
             <h5>Random photos</h5>
+            <ul>
+              {photos.map((photo, i) => (
+                <li className="photo" key={i}>
+                  <img src={photo.prefix + '150x150' + photo.suffix} alt={photo.firstName + ' ' + photo.lastName} />
+                </li>
+              ))}
+              <a className="see-more" target="_blank" href={this.props.restaurant.canonicalUrl}>
+                see more photos on Foursquare
+              </a>
+            </ul>
           </section>
         </div>
       </div>

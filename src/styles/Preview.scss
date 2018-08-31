@@ -21,6 +21,16 @@
     align-items: stretch;
   }
 
+  .photos, .reviews {
+    a.see-more {
+      text-align: right;
+      text-decoration: none;
+      font-size: 14px;
+      color: #9b9b9b;
+      display: block;
+    }
+  }
+
   .reviews {
     height: 200px;
     flex-basis: 525px;
@@ -34,7 +44,7 @@
         box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
         background-color: #ffffff;
         border: solid 1px #e0e0e0;
-        margin: 0 30px 10px 0;
+        margin: 0 0 10px 0;
         border-radius: 2px;
         padding: 20px;
       }
@@ -52,10 +62,22 @@
         border-radius: 8px;
       }
     }
+
     .main {
       padding: 0 0 0 10px;
       flex-grow: 1;
 
+      header {
+        font-size: 14px;
+        font-weight: 500;
+        color: #878787;
+        margin: 0 0 5px 0;
+
+        span {
+          float: right;
+          font-size: 12px;
+        }
+      }
       p {
         margin: 0;
         padding: 0;
@@ -68,6 +90,32 @@
   .photos {
     height: 200px;
     flex-grow: 1;
+    padding: 0 0 0 30px;
+
+    ul {
+      display: inline-block;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      clear: both;
+
+      li {
+        float: left;
+        width: 125px;
+        height: 125px;
+        margin: 0 8px 10px 0;
+        border: solid 1px #979797;
+
+        img {
+          width: 125px;
+          height: 125px;
+        }
+      }
+    }
+
+    a.see-more {
+      margin-right: 8px;
+    }
   }
 
   .fallback {
