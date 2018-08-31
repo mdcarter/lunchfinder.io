@@ -4,14 +4,11 @@
   "author": "Maxime Dehaye <maxime.dehaye@gmail.com>",
   "homepage": "https://lunchfinder.io",
   "private": true,
-  "now": {
-    "alias": "lunchfinder.io"
-  },
   "scripts": {
     "precommit": "lint-staged",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",
-    "deploy": "yarn run build && now ./build && now alias",
+    "deploy": "yarn run build && cp now.json ./build && now ./build && now alias",
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "yarn run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
