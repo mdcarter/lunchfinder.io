@@ -50,7 +50,7 @@ export default class Preview extends Component {
                   </section>
                 </li>
               ))}
-              <a className="see-more" target="_blank" href={this.props.restaurant.canonicalUrl}>
+              <a className="see-more" target="_blank" href={this.props.restaurant.canonicalUrl + '?tipsSort=popular'}>
                 see more reviews on Foursquare
               </a>
             </ul>
@@ -63,7 +63,7 @@ export default class Preview extends Component {
                   <img src={photo.prefix + '150x150' + photo.suffix} alt={photo.firstName + ' ' + photo.lastName} />
                 </li>
               ))}
-              <a className="see-more" target="_blank" href={this.props.restaurant.canonicalUrl}>
+              <a className="see-more" target="_blank" href={this.props.restaurant.canonicalUrl + '/photos'}>
                 see more photos on Foursquare
               </a>
             </ul>
