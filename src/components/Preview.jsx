@@ -36,6 +36,18 @@ export default class Preview extends Component {
         <div className="columns">
           <section className="reviews">
             <h5>Random reviews</h5>
+            <ul>
+              {reviews.map((review, i) => (
+                <li className="review" key={i}>
+                  <div className="photo">
+                    <img src={review.user.photo.prefix + '100x100' + review.user.photo.suffix} alt={review.user.firstname + ' ' + review.user.lastname} />
+                  </div>
+                  <section className="main">
+                    <p>{review.text}</p>
+                  </section>
+                </li>
+              ))}
+            </ul>
           </section>
           <section className="photos">
             <h5>Random photos</h5>
