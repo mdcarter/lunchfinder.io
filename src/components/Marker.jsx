@@ -6,9 +6,6 @@ export default class Marker extends Component {
     return (
       <div className="marker">
         <Icons name="Marker" />
-        <a className="btn go" target="_blank" href={this.props.link}>
-          Y aller
-        </a>
       </div>
     );
   }

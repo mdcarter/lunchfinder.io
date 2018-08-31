@@ -10,8 +10,45 @@
 
   .map {
     flex-basis: 400px;
+    position: relative;
+
+    .go {
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 99;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+
+      button {
+        pointer-events: none;
+        border-radius: 5px;
+        padding: 5px 25px;
+        background-color: #24b29c;
+        font-size: 18px;
+        font-weight: 300;
+        color: #fff;
+        border: 0;
+      }
+    }
 
     @media all and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .map:hover {
+    .go {
+      display: flex;
+    }
+    .marker {
       display: none;
     }
   }

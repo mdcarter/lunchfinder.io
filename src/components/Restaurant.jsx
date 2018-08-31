@@ -62,6 +62,9 @@ export default class Restaurant extends Reflux.Component {
           <Reviews {...this.state} />
         </section>
         <section className="map">
+          <a className="go" target="_blank" href={this.state.restaurant.directions}>
+            <button>Go !</button>
+          </a>
           {coords && (
             <GoogleMapReact center={coords} defaultZoom={16} options={options}>
               <Marker lat={this.state.restaurant.location.lat} lng={this.state.restaurant.location.lng} link={this.state.restaurant.directions} />
