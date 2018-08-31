@@ -1,0 +1,47 @@
+.restaurant-preview {
+  padding: 30px 120px 30px 140px;
+
+  h4 {
+    margin: 0 0 30px 0;
+    font-family: Poppins;
+    font-size: 21px;
+    font-weight: 500;
+    color: #4a4a4a;
+  }
+
+  h5 {
+    font-weight: 300;
+    font-size: 17px;
+    margin: 0 0 20px 0;
+    color: #4a4a4a;
+  }
+
+  .columns {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .reviews {
+    height: 200px;
+    flex-basis: 495px;
+  }
+
+  .photos {
+    height: 200px;
+    flex-grow: 1;
+  }
+
+  .fallback {
+    text-align: center;
+    color: #9b9b9b;
+    font-weight: 300;
+
+    p {
+      margin: 50px 0 10px 0;
+      font-size: 17px;
+    }
+    span {
+      font-size: 14px;
+    }
+  }
+}
