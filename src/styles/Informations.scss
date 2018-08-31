@@ -3,6 +3,11 @@
   padding: 40px 120px 80px 140px;
   border-bottom: solid 1px #e0e0e0;
 
+  @media all and (max-width: 768px) {
+    padding: 40px 0 40px 20px;
+    max-width: 100%;
+  }
+
   h3 {
     margin-top: 55px;
     font-size: 21px;
@@ -17,6 +22,12 @@
     background-color: #f4f4f4;
     position: relative;
 
+    @media all and (max-width: 768px) {
+      max-width: none;
+      margin-right: 20px;
+      padding: 30px 20px;
+    } 
+
     h2 {
       font-size: 30px;
       font-weight: bold;
@@ -28,6 +39,11 @@
       list-style-type: none;
       margin: 10px 0 0 0;
       padding: 0;
+
+      @media all and (max-width: 768px) {
+        line-height: 25px;
+        margin-bottom: 25px;
+      } 
 
       li {
         display: inline-block;
@@ -56,6 +72,11 @@
       font-size: 14px;
       color: #1542a6;
 
+      @media all and (max-width: 768px) {
+        top: initial;
+        bottom: 10px;
+      }
+
       .rating {
         background-color: #1542a6;
         color: #fff;
@@ -79,6 +100,11 @@
     margin: 25px 0 0 30px;
     padding: 0;
 
+    @media all and (max-width: 768px) {
+      margin-left: 0;
+      line-height: 25px;
+    } 
+
     li {
       display: inline-block;
       font-size: 17px;
@@ -93,11 +119,19 @@
 
     .distance-block span {
       color: #a9a9a9;
+      @media all and (max-width: 768px) {
+        display: block;
+        margin: 5px 25px;
+      }
     }
   }
 
   .actions {
     margin: 20px 0 0 30px;
+
+    @media all and (max-width: 768px) {
+      margin-left: 0;
+    } 
 
     a, button {
       outline: none;
@@ -116,6 +150,10 @@
       background: #fff;
       color: #24b29c;
       border: 1px solid #24b29c;
+
+      @media all and (max-width: 768px) {
+        margin-bottom: 15px;
+      }
     }
   }
 }
