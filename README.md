@@ -25,7 +25,7 @@ yarn start
 This is build using create-react-app by facebook, and it use React, Reflux and the Foursquare/Swarm API
 
 ### Prerequisites
-What is needed to set up the dev environment. For instance, global dependencies or any other tools. include download links.
+Having node, and nodemon installed on the system.
 
 
 ### Setting up Dev
@@ -39,49 +39,39 @@ cd lunchfinder.io/
 yarn
 ```
 
-And state what happens step-by-step. If there is any virtual environment, local server or database feeder needed, explain here.
+Once the dependencies are installed, you can start the app using this command :
+
+```shell
+yarn start
+```
+
+This will also open a browser pointing to the correct url.
 
 ### Building
 
-If your project needs some additional steps for the developer to build the
-project after some code changes, state them here. for example:
+If you need to build the project to be able to host is somewhere, use this command:
 
 ```shell
 yarn build
 ```
-
-Here again you should state what actually happens when the code above gets
-executed.
+A "build" folder will be created, containing everything that needs to be hosted.
 
 ### Deploying / Publishing
-give instructions on how to build and release a new version
-In case there's some step you have to take that publishes this project to a
-server, this is the right time to state it.
+
+Once you have "now" installed and configured on your machine, just use this command to deploy the app online:
 
 ```shell
 yarn deploy
 ```
 
-And again you'd need to tell what the previous code actually does.
-
-## Configuration
-
-Here you should write what are all of the configurations a user can enter when
-using the project.
-
 ## Tests
 
-Describe and show how to run the tests with code examples.
-Explain what these tests test and why.
+The tests are located in the "tests" folder. Run the tests using this command:
 
 ```shell
 yarn test
 ```
 
-## Style guide
-
-Explain your code style and show how to check it.
-
 ## Api Reference
 
-If the api is external, link to api documentation. If not describe your api including authentication methods as well as explaining all the endpoints with their required parameters.
+The app use the Foursquare API, you can check the documentation [on this page](https://developer.foursquare.com/docs).
