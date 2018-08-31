@@ -26,7 +26,7 @@
       max-width: none;
       margin-right: 20px;
       padding: 30px 20px;
-    } 
+    }
 
     h2 {
       font-size: 30px;
@@ -37,13 +37,13 @@
 
     ul {
       list-style-type: none;
-      margin: 10px 0 0 0;
+      margin: 10px 0 0;
       padding: 0;
 
       @media all and (max-width: 768px) {
         line-height: 25px;
         margin-bottom: 25px;
-      } 
+      }
 
       li {
         display: inline-block;
@@ -103,7 +103,7 @@
     @media all and (max-width: 768px) {
       margin-left: 0;
       line-height: 25px;
-    } 
+    }
 
     li {
       display: inline-block;
@@ -131,7 +131,7 @@
 
     @media all and (max-width: 768px) {
       margin-left: 0;
-    } 
+    }
 
     a, button {
       outline: none;

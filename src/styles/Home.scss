@@ -11,8 +11,8 @@
     padding: 40px 0 40px 190px;
 
     @media all and (max-width: 768px) {
-     padding: 40px 10px 0 10px;
-    } 
+     padding: 40px 10px 0;
+    }
 
     .logo-home {
       @media all and (max-width: 768px) { margin-left: 10px; }
@@ -22,7 +22,7 @@
       margin-top: 170px;
       font-size: 30px;
       font-weight: bold;
-      @media all and (max-width: 768px) { 
+      @media all and (max-width: 768px) {
         margin-top: 50px;
         margin-left: 10px;
         margin-right: 10px;
@@ -75,8 +75,8 @@
     font-size: 17px;
     color: #9b9b9b;
     min-width: 620px;
-    @media all and (max-width: 768px) {  
-      min-width: 70%; 
+    @media all and (max-width: 768px) {
+      min-width: 70%;
       max-width: 70%;
       margin-left: 15px;
     }
