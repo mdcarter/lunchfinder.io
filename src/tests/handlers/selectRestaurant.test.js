@@ -35,7 +35,7 @@ describe('selectRestaurant handler', () => {
     expect(Actions.getRestaurant.calledOnce).equal(true);
   });
 
-  it('should set state to 404 error if no restaurants are present', async () => {
+  it('should set state to error if no restaurants are present', async () => {
     const res = new window.Response('{}', {
       status: 200
     });
@@ -43,6 +43,6 @@ describe('selectRestaurant handler', () => {
 
     await selectRestaurant(context);
     expect(Actions.getRestaurant.calledOnce).equal(false);
-    expect(context.state.error).to.equal(404);
+    expect(context.state.error).to.equal('You need to specify an address');
   });
 });
