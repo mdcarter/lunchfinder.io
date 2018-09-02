@@ -105,6 +105,7 @@
   }
 
   .locate {
+    cursor: pointer;
     outline: none;
     margin-top: 15px;
     padding: 0;
@@ -113,6 +114,12 @@
     font-size: 15px;
     font-weight: 500;
     color: #fff;
+
+    span.error {
+      margin-left: 15px;
+      color: #ef8e8e;
+      font-weight: 200;
+    }
 
     svg {
       vertical-align: bottom;

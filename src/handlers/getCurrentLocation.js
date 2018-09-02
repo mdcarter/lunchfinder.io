@@ -13,7 +13,12 @@ export default context => {
         });
         Actions.getCurrentAddress();
       },
-      error => {},
+      error => {
+        context.setState({
+          retrievingLocation: false,
+          error: "You have disabled Geolocation, we can't locate you, sorry"
+        });
+      },
       { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
     );
   }

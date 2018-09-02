@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import History from './../History';
 import Actions from './../Actions';
 import Icons from './Icons';
 import Logo from './Logo';
@@ -9,7 +10,9 @@ export default class Informations extends Component {
   render() {
     return (
       <header className="restaurant-header">
-        <Logo black="true" />
+        <a className="logo" onClick={() => History.push(`/`)}>
+          <Logo black="true" />
+        </a>
         <h3>Your restaurant for today</h3>
 
         <section className="details">

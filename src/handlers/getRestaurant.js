@@ -21,7 +21,7 @@ export default async (context, id) => {
   if (restaurant.response && restaurant.response.venue) {
     context.setState({
       restaurant: restaurant.response.venue,
-      status: { fetchingData: false }
+      retrievingLocation: false
     });
   }
 

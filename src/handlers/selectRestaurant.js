@@ -2,7 +2,9 @@ import Actions from './../Actions';
 import Query from 'query-string';
 
 export default async context => {
-  context.setState({ status: { fetchingData: true } });
+  context.setState({
+    retrievingLocation: true
+  });
 
   const params = {
     categoryId: process.env.REACT_APP_FOURSQUARE_FOOD_CATEGORY,
@@ -30,8 +32,8 @@ export default async context => {
     Actions.getRestaurant(restaurant_id);
   } else {
     context.setState({
-      error: 404,
-      status: { fetchingData: false }
+      error: 'You need to specify an address',
+      retrievingLocation: false
     });
   }
 };

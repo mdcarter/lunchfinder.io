@@ -34,14 +34,13 @@ export default class Home extends Reflux.Component {
               className={this.state.retrievingLocation ? 'find btn-loading' : 'find'}
               type="button"
               onClick={Actions.selectRestaurant}
-              disabled={!this.state.latitude ? true : false}
             >
               {this.state.retrievingLocation === false && <Icons name="Arrow" />}
               {this.state.retrievingLocation !== false && <Icons name="Loader" />}
             </button>
           </form>
           <button className="locate" aria-label="Use my location" onClick={Actions.getCurrentLocation}>
-            <Icons name="Locate" /> My location
+            <Icons name="Locate" /> My location <span className="error">{this.state.error}</span>
           </button>
         </section>
 
