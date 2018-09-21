@@ -1,4 +1,5 @@
 {
   "name": "lunchfinder",
-  "alias": "lunchfinder.io"
+  "alias": "lunchfinder.io",
+  "NOW_NPM_TOKEN": "@npm-token"
 }
